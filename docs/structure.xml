@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a10" title="BCA Inspector Tools for Laravel">
+  <file path="Commands/Inspect.php" hash="889660958eedd9d34b76d594de011c30" package="Laravel">
+    <docblock line="3">
+      <description><![CDATA[Inspector Tools for Artisan]]></description>
+      <long-description><![CDATA[<p>PHP Version 5.3</p>]]></long-description>
+      <tag line="3" name="category" description="Command"/>
+      <tag line="3" name="package" description="Laravel"/>
+      <tag line="3" name="author" description="Brodkin CyberArts &lt;support@brodkinca.com&gt;"/>
+      <tag line="3" name="copyright" description="2013 Brodkin CyberArts."/>
+      <tag line="3" name="license" description="All rights reserved."/>
+      <tag line="3" name="version" description="GIT: $Id$"/>
+      <tag line="3" name="link" description="https://github.com/brodkinca/BCA-Laravel-Inspect" link="https://github.com/brodkinca/BCA-Laravel-Inspect"/>
+    </docblock>
+    <namespace-alias name="Command">Illuminate\Console\Command</namespace-alias>
+    <namespace-alias name="InputOption">Symfony\Component\Console\Input\InputOption</namespace-alias>
+    <class final="true" abstract="true" namespace="BCA\LaravelInspect\Commands" line="28" package="Laravel">
+      <extends>\Illuminate\Console\Command</extends>
+      <name>Inspect</name>
+      <full_name>\BCA\LaravelInspect\Commands\Inspect</full_name>
+      <docblock line="22">
+        <description><![CDATA[Artisan Inspect Abstract Class]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="22" name="category" description="Command"/>
+        <tag line="22" name="package" description="Laravel"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="BCA\LaravelInspect\Commands" line="35" package="Laravel">
+        <name>getOptions</name>
+        <full_name>getOptions</full_name>
+        <docblock line="30">
+          <description><![CDATA[Get the console command options.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="30" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Commands/InspectFixCommand.php" hash="0709bbc23845a711b06b721a3c237232" package="Laravel">
+    <docblock line="3">
+      <description><![CDATA[Inspector Tools for Artisan]]></description>
+      <long-description><![CDATA[<p>PHP Version 5.3</p>]]></long-description>
+      <tag line="3" name="category" description="Command"/>
+      <tag line="3" name="package" description="Laravel"/>
+      <tag line="3" name="author" description="Brodkin CyberArts &lt;support@brodkinca.com&gt;"/>
+      <tag line="3" name="copyright" description="2013 Brodkin CyberArts."/>
+      <tag line="3" name="license" description="All rights reserved."/>
+      <tag line="3" name="version" description="GIT: $Id$"/>
+      <tag line="3" name="link" description="https://github.com/brodkinca/BCA-Laravel-Inspect" link="https://github.com/brodkinca/BCA-Laravel-Inspect"/>
+    </docblock>
+    <namespace-alias name="InputOption">Symfony\Component\Console\Input\InputOption</namespace-alias>
+    <class final="false" abstract="false" namespace="BCA\LaravelInspect\Commands" line="27" package="Laravel">
+      <extends>\BCA\LaravelInspect\Commands\Inspect</extends>
+      <name>InspectFixCommand</name>
+      <full_name>\BCA\LaravelInspect\Commands\InspectFixCommand</full_name>
+      <docblock line="21">
+        <description><![CDATA[Artisan Inspect:Fix Command]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="21" name="category" description="Command"/>
+        <tag line="21" name="package" description="Laravel"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="34" namespace="BCA\LaravelInspect\Commands" package="Default">
+        <name>$name</name>
+        <default><![CDATA['inspect:fix']]></default>
+        <docblock line="29">
+          <description><![CDATA[The console command name.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="29" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="41" namespace="BCA\LaravelInspect\Commands" package="Default">
+        <name>$description</name>
+        <default><![CDATA['Run PHP-CS-Fixer.']]></default>
+        <docblock line="36">
+          <description><![CDATA[The console command description.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="36" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="BCA\LaravelInspect\Commands" line="48" package="Laravel">
+        <name>fire</name>
+        <full_name>fire</full_name>
+        <docblock line="43">
+          <description><![CDATA[Run the command.]]></description>
+          <long-description><![CDATA[<p>Executed immediately.</p>]]></long-description>
+          <tag line="43" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="BCA\LaravelInspect\Commands" line="81" package="Laravel">
+        <name>getOptions</name>
+        <full_name>getOptions</full_name>
+        <docblock line="76">
+          <description><![CDATA[Get the console command options.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="76" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Commands/InspectLintCommand.php" hash="23d4922db7c2689933b6dc885bf2750c" package="Laravel">
+    <docblock line="3">
+      <description><![CDATA[Inspector Tools for Artisan]]></description>
+      <long-description><![CDATA[<p>PHP Version 5.3</p>]]></long-description>
+      <tag line="3" name="category" description="Command"/>
+      <tag line="3" name="package" description="Laravel"/>
+      <tag line="3" name="author" description="Brodkin CyberArts &lt;support@brodkinca.com&gt;"/>
+      <tag line="3" name="copyright" description="2013 Brodkin CyberArts."/>
+      <tag line="3" name="license" description="All rights reserved."/>
+      <tag line="3" name="version" description="GIT: $Id$"/>
+      <tag line="3" name="link" description="https://github.com/brodkinca/BCA-Laravel-Inspect" link="https://github.com/brodkinca/BCA-Laravel-Inspect"/>
+    </docblock>
+    <namespace-alias name="InputOption">Symfony\Component\Console\Input\InputOption</namespace-alias>
+    <class final="false" abstract="false" namespace="BCA\LaravelInspect\Commands" line="27" package="Laravel">
+      <extends>\BCA\LaravelInspect\Commands\Inspect</extends>
+      <name>InspectLintCommand</name>
+      <full_name>\BCA\LaravelInspect\Commands\InspectLintCommand</full_name>
+      <docblock line="21">
+        <description><![CDATA[Artisan Inspect:Lint Command]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="21" name="category" description="Command"/>
+        <tag line="21" name="package" description="Laravel"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="34" namespace="BCA\LaravelInspect\Commands" package="Default">
+        <name>$name</name>
+        <default><![CDATA['inspect:lint']]></default>
+        <docblock line="29">
+          <description><![CDATA[The console command name.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="29" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="41" namespace="BCA\LaravelInspect\Commands" package="Default">
+        <name>$description</name>
+        <default><![CDATA['Run PHP-CS-Fixer.']]></default>
+        <docblock line="36">
+          <description><![CDATA[The console command description.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="36" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="BCA\LaravelInspect\Commands" line="48" package="Laravel">
+        <name>fire</name>
+        <full_name>fire</full_name>
+        <docblock line="43">
+          <description><![CDATA[Run the command.]]></description>
+          <long-description><![CDATA[<p>Executed immediately.</p>]]></long-description>
+          <tag line="43" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="BCA\LaravelInspect\Commands" line="66" package="Laravel">
+        <name>getOptions</name>
+        <full_name>getOptions</full_name>
+        <docblock line="61">
+          <description><![CDATA[Get the console command options.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="61" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Commands/InspectMessCommand.php" hash="d088f0a578d1a8581ce9d380d43ed91e" package="Laravel">
+    <docblock line="3">
+      <description><![CDATA[Inspector Tools for Artisan]]></description>
+      <long-description><![CDATA[<p>PHP Version 5.3</p>]]></long-description>
+      <tag line="3" name="category" description="Command"/>
+      <tag line="3" name="package" description="Laravel"/>
+      <tag line="3" name="author" description="Brodkin CyberArts &lt;support@brodkinca.com&gt;"/>
+      <tag line="3" name="copyright" description="2013 Brodkin CyberArts."/>
+      <tag line="3" name="license" description="All rights reserved."/>
+      <tag line="3" name="version" description="GIT: $Id$"/>
+      <tag line="3" name="link" description="https://github.com/brodkinca/BCA-Laravel-Inspect" link="https://github.com/brodkinca/BCA-Laravel-Inspect"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="BCA\LaravelInspect\Commands" line="25" package="Laravel">
+      <extends>\BCA\LaravelInspect\Commands\Inspect</extends>
+      <name>InspectMessCommand</name>
+      <full_name>\BCA\LaravelInspect\Commands\InspectMessCommand</full_name>
+      <docblock line="19">
+        <description><![CDATA[Artisan Inspect:Mess Command]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="19" name="category" description="Command"/>
+        <tag line="19" name="package" description="Laravel"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="32" namespace="BCA\LaravelInspect\Commands" package="Default">
+        <name>$name</name>
+        <default><![CDATA['inspect:mess']]></default>
+        <docblock line="27">
+          <description><![CDATA[The console command name.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="27" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="39" namespace="BCA\LaravelInspect\Commands" package="Default">
+        <name>$description</name>
+        <default><![CDATA['Run PHP Mess Detector.']]></default>
+        <docblock line="34">
+          <description><![CDATA[The console command description.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="34" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="BCA\LaravelInspect\Commands" line="46" package="Laravel">
+        <name>fire</name>
+        <full_name>fire</full_name>
+        <docblock line="41">
+          <description><![CDATA[Run the command.]]></description>
+          <long-description><![CDATA[<p>Executed immediately.</p>]]></long-description>
+          <tag line="41" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Commands/InspectSniffCommand.php" hash="8456f92cd5199ccba507cad98dbde228" package="Laravel">
+    <docblock line="3">
+      <description><![CDATA[Inspector Tools for Artisan]]></description>
+      <long-description><![CDATA[<p>PHP Version 5.3</p>]]></long-description>
+      <tag line="3" name="category" description="Command"/>
+      <tag line="3" name="package" description="Laravel"/>
+      <tag line="3" name="author" description="Brodkin CyberArts &lt;support@brodkinca.com&gt;"/>
+      <tag line="3" name="copyright" description="2013 Brodkin CyberArts."/>
+      <tag line="3" name="license" description="All rights reserved."/>
+      <tag line="3" name="version" description="GIT: $Id$"/>
+      <tag line="3" name="link" description="https://github.com/brodkinca/BCA-Laravel-Inspect" link="https://github.com/brodkinca/BCA-Laravel-Inspect"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="BCA\LaravelInspect\Commands" line="25" package="Laravel">
+      <extends>\BCA\LaravelInspect\Commands\Inspect</extends>
+      <name>InspectSniffCommand</name>
+      <full_name>\BCA\LaravelInspect\Commands\InspectSniffCommand</full_name>
+      <docblock line="19">
+        <description><![CDATA[Artisan Inspect:Sniff Command]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="19" name="category" description="Command"/>
+        <tag line="19" name="package" description="Laravel"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="32" namespace="BCA\LaravelInspect\Commands" package="Default">
+        <name>$name</name>
+        <default><![CDATA['inspect:sniff']]></default>
+        <docblock line="27">
+          <description><![CDATA[The console command name.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="27" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="39" namespace="BCA\LaravelInspect\Commands" package="Default">
+        <name>$description</name>
+        <default><![CDATA['Run PHP Code Sniffer.']]></default>
+        <docblock line="34">
+          <description><![CDATA[The console command description.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="34" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="BCA\LaravelInspect\Commands" line="46" package="Laravel">
+        <name>fire</name>
+        <full_name>fire</full_name>
+        <docblock line="41">
+          <description><![CDATA[Run the command.]]></description>
+          <long-description><![CDATA[<p>Executed immediately.</p>]]></long-description>
+          <tag line="41" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="LaravelInspectServiceProvider.php" hash="9d24e49f4884d114a554a7bebd7520ec" package="Laravel">
+    <docblock line="3">
+      <description><![CDATA[Inspector Tools for Artisan]]></description>
+      <long-description><![CDATA[<p>PHP Version 5.3</p>]]></long-description>
+      <tag line="3" name="category" description="Command"/>
+      <tag line="3" name="package" description="Laravel"/>
+      <tag line="3" name="author" description="Brodkin CyberArts &lt;support@brodkinca.com&gt;"/>
+      <tag line="3" name="copyright" description="2013 Brodkin CyberArts."/>
+      <tag line="3" name="license" description="All rights reserved."/>
+      <tag line="3" name="version" description="GIT: $Id$"/>
+      <tag line="3" name="link" description="https://github.com/brodkinca/BCA-Laravel-Inspect" link="https://github.com/brodkinca/BCA-Laravel-Inspect"/>
+    </docblock>
+    <namespace-alias name="ServiceProvider">Illuminate\Support\ServiceProvider</namespace-alias>
+    <class final="false" abstract="false" namespace="BCA\LaravelInspect" line="27" package="Laravel">
+      <extends>\Illuminate\Support\ServiceProvider</extends>
+      <name>LaravelInspectServiceProvider</name>
+      <full_name>\BCA\LaravelInspect\LaravelInspectServiceProvider</full_name>
+      <docblock line="21">
+        <description><![CDATA[Laravel Inspect Service Provider]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="21" name="category" description="ServiceProvider"/>
+        <tag line="21" name="package" description="Laravel"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="34" namespace="BCA\LaravelInspect" package="Default">
+        <name>$defer</name>
+        <default><![CDATA[false]]></default>
+        <docblock line="29">
+          <description><![CDATA[Indicates if loading of the provider is deferred.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="29" name="var" description="" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="BCA\LaravelInspect" line="41" package="Laravel">
+        <name>boot</name>
+        <full_name>boot</full_name>
+        <docblock line="36">
+          <description><![CDATA[Bootstrap the application events.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="36" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="BCA\LaravelInspect" line="51" package="Laravel">
+        <name>register</name>
+        <full_name>register</full_name>
+        <docblock line="46">
+          <description><![CDATA[Register the service provider.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="46" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="BCA\LaravelInspect" line="90" package="Laravel">
+        <name>provides</name>
+        <full_name>provides</full_name>
+        <docblock line="85">
+          <description><![CDATA[Get the services provided by the provider.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="85" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <package name="Default" full_name="Default"/>
+  <package name="Laravel" full_name="Laravel"/>
+  <namespace name="BCA" full_name="BCA">
+    <namespace name="LaravelInspect" full_name="BCA\LaravelInspect">
+      <namespace name="Commands" full_name="BCA\LaravelInspect\Commands"/>
+    </namespace>
+  </namespace>
+  <marker count="0">todo</marker>
+  <marker count="0">fixme</marker>
+  <deprecated count="0"/>
+</project>
