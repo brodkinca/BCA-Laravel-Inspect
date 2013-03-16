@@ -9,7 +9,7 @@
  * @package   Laravel
  * @author    Brodkin CyberArts <support@brodkinca.com>
  * @copyright 2013 Brodkin CyberArts.
- * @license   All rights reserved.
+ * @license   MIT
  * @version   GIT: $Id$
  * @link      https://github.com/brodkinca/BCA-Laravel-Inspect
  */
