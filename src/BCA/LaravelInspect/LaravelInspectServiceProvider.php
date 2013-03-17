@@ -5,13 +5,14 @@
  *
  * PHP Version 5.3
  *
- * @category  Command
- * @package   Laravel
- * @author    Brodkin CyberArts <oss@brodkinca.com>
- * @copyright 2013 Brodkin CyberArts.
- * @license   MIT
- * @version   GIT: $Id$
- * @link      https://github.com/brodkinca/BCA-Laravel-Inspect
+ * @category   ServiceProvider
+ * @package    Laravel
+ * @subpackage Artisan
+ * @author     Brodkin CyberArts <oss@brodkinca.com>
+ * @copyright  2013 Brodkin CyberArts.
+ * @license    MIT
+ * @version    GIT: $Id$
+ * @link       https://github.com/brodkinca/BCA-Laravel-Inspect
  */
 
 namespace BCA\LaravelInspect;
@@ -21,13 +22,16 @@ use Illuminate\Support\ServiceProvider;
 /**
  * Laravel Inspect Service Provider
  *
- * @category  ServiceProvider
- * @package   Laravel
+ * @category   ServiceProvider
+ * @package    Laravel
+ * @subpackage Artisan
  */
 class LaravelInspectServiceProvider extends ServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.
+     *
+     * @since 1.0.0
      *
      * @var bool
      */
@@ -35,6 +39,8 @@ class LaravelInspectServiceProvider extends ServiceProvider
 
     /**
      * Bootstrap the application events.
+     *
+     * @since 1.0.0
      *
      * @return void
      */
@@ -45,6 +51,8 @@ class LaravelInspectServiceProvider extends ServiceProvider
 
     /**
      * Register the service provider.
+     *
+     * @since 1.0.0
      *
      * @return void
      */
@@ -84,6 +92,8 @@ class LaravelInspectServiceProvider extends ServiceProvider
 
     /**
      * Get the services provided by the provider.
+     *
+     * @since 1.0.0
      *
      * @return array
      */

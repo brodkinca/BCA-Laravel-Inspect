@@ -5,13 +5,14 @@
  *
  * PHP Version 5.3
  *
- * @category  Command
- * @package   Laravel
- * @author    Brodkin CyberArts <oss@brodkinca.com>
- * @copyright 2013 Brodkin CyberArts.
- * @license   MIT
- * @version   GIT: $Id$
- * @link      https://github.com/brodkinca/BCA-Laravel-Inspect
+ * @category   Command
+ * @package    Laravel
+ * @subpackage Artisan
+ * @author     Brodkin CyberArts <oss@brodkinca.com>
+ * @copyright  2013 Brodkin CyberArts.
+ * @license    MIT
+ * @version    GIT: $Id$
+ * @link       https://github.com/brodkinca/BCA-Laravel-Inspect
  */
 
 namespace BCA\LaravelInspect\Commands;
@@ -22,13 +23,16 @@ use Symfony\Component\Console\Input\InputOption;
 /**
  * Artisan Inspect Abstract Class
  *
- * @category  Command
- * @package   Laravel
+ * @category   Command
+ * @package    Laravel
+ * @subpackage Artisan
  */
 abstract class Inspect extends Command
 {
     /**
      * Name of CLI executable
+     *
+     * @since 1.0.1
      *
      * @var string
      */
@@ -37,6 +41,8 @@ abstract class Inspect extends Command
     /**
      * Path to CLI tool being executed
      *
+     * @since 1.0.1
+     *
      * @var string
      */
     protected $pathCli;
@@ -44,12 +50,16 @@ abstract class Inspect extends Command
     /**
      * Path to ruleset for this tool
      *
+     * @since 1.0.1
+     *
      * @var string
      */
     protected $pathRuleset;
 
     /**
      * Get the console command options.
+     *
+     * @since 1.0.0
      *
      * @return array
      */
@@ -62,6 +72,8 @@ abstract class Inspect extends Command
 
     /**
      * Is CLI tool installed?
+     *
+     * @since 1.0.1
      *
      * @return boolean
      */
@@ -78,6 +90,8 @@ abstract class Inspect extends Command
 
     /**
      * Set paths to executable and ruleset
+     *
+     * @since  1.0.1
      *
      * @return void
      */

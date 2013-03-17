@@ -5,13 +5,14 @@
  *
  * PHP Version 5.3
  *
- * @category  Command
- * @package   Laravel
- * @author    Brodkin CyberArts <oss@brodkinca.com>
- * @copyright 2013 Brodkin CyberArts.
- * @license   MIT
- * @version   GIT: $Id$
- * @link      https://github.com/brodkinca/BCA-Laravel-Inspect
+ * @category   Command
+ * @package    Laravel
+ * @subpackage Artisan
+ * @author     Brodkin CyberArts <oss@brodkinca.com>
+ * @copyright  2013 Brodkin CyberArts.
+ * @license    MIT
+ * @version    GIT: $Id$
+ * @link       https://github.com/brodkinca/BCA-Laravel-Inspect
  */
 
 namespace BCA\LaravelInspect\Commands;
@@ -19,13 +20,16 @@ namespace BCA\LaravelInspect\Commands;
 /**
  * Artisan Inspect:Mess Command
  *
- * @category  Command
- * @package   Laravel
+ * @category   Command
+ * @package    Laravel
+ * @subpackage Artisan
  */
 class InspectMessCommand extends Inspect
 {
     /**
      * Name of CLI executable
+     *
+     * @since 1.0.1
      *
      * @var string
      */
@@ -34,6 +38,8 @@ class InspectMessCommand extends Inspect
     /**
      * The console command name.
      *
+     * @since 1.0.0
+     *
      * @var string
      */
     protected $name = 'inspect:mess';
@@ -41,12 +47,16 @@ class InspectMessCommand extends Inspect
     /**
      * The console command description.
      *
+     * @since 1.0.0
+     *
      * @var string
      */
     protected $description = 'Run PHP Mess Detector.';
 
     /**
      * Run the command. Executed immediately.
+     *
+     * @since 1.0.0
      *
      * @return void
      */

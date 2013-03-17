@@ -5,13 +5,14 @@
  *
  * PHP Version 5.3
  *
- * @category  Command
- * @package   Laravel
- * @author    Brodkin CyberArts <oss@brodkinca.com>
- * @copyright 2013 Brodkin CyberArts.
- * @license   MIT
- * @version   GIT: $Id$
- * @link      https://github.com/brodkinca/BCA-Laravel-Inspect
+ * @category   Command
+ * @package    Laravel
+ * @subpackage Artisan
+ * @author     Brodkin CyberArts <oss@brodkinca.com>
+ * @copyright  2013 Brodkin CyberArts.
+ * @license    MIT
+ * @version    GIT: $Id$
+ * @link       https://github.com/brodkinca/BCA-Laravel-Inspect
  */
 
 namespace BCA\LaravelInspect\Commands;
@@ -21,13 +22,16 @@ use Symfony\Component\Console\Input\InputOption;
 /**
  * Artisan Inspect:Lint Command
  *
- * @category  Command
- * @package   Laravel
+ * @category   Command
+ * @package    Laravel
+ * @subpackage Artisan
  */
 class InspectLintCommand extends Inspect
 {
     /**
      * Name of CLI executable
+     *
+     * @since 1.0.1
      *
      * @var string
      */
@@ -36,6 +40,8 @@ class InspectLintCommand extends Inspect
     /**
      * The console command name.
      *
+     * @since 1.0.0
+     *
      * @var string
      */
     protected $name = 'inspect:lint';
@@ -43,12 +49,16 @@ class InspectLintCommand extends Inspect
     /**
      * The console command description.
      *
+     * @since 1.0.0
+     *
      * @var string
      */
     protected $description = 'Run PHP\'s built-in linter.';
 
     /**
      * Run the command. Executed immediately.
+     *
+     * @since 1.0.0
      *
      * @return void
      */
@@ -58,6 +68,7 @@ class InspectLintCommand extends Inspect
             $this->error(
                 'Cannot continue. PHP is not in your system path.'
             );
+
             return false;
         }
 
@@ -74,6 +85,8 @@ class InspectLintCommand extends Inspect
 
     /**
      * Get the console command options.
+     *
+     * @since 1.0.0
      *
      * @return array
      */

@@ -5,13 +5,14 @@
  *
  * PHP Version 5.3
  *
- * @category  Command
- * @package   Laravel
- * @author    Brodkin CyberArts <oss@brodkinca.com>
- * @copyright 2013 Brodkin CyberArts.
- * @license   MIT
- * @version   GIT: $Id$
- * @link      https://github.com/brodkinca/BCA-Laravel-Inspect
+ * @category   Command
+ * @package    Laravel
+ * @subpackage Artisan
+ * @author     Brodkin CyberArts <oss@brodkinca.com>
+ * @copyright  2013 Brodkin CyberArts.
+ * @license    MIT
+ * @version    GIT: $Id$
+ * @link       https://github.com/brodkinca/BCA-Laravel-Inspect
  */
 
 namespace BCA\LaravelInspect\Commands;
@@ -21,8 +22,9 @@ use Symfony\Component\Console\Input\InputOption;
 /**
  * Artisan Inspect:Fix Command
  *
- * @category  Command
- * @package   Laravel
+ * @category   Command
+ * @package    Laravel
+ * @subpackage Artisan
  */
 class InspectFixCommand extends Inspect
 {
@@ -67,6 +69,7 @@ class InspectFixCommand extends Inspect
                 'Once the tool has been installed you can run '.$this->name.' '.
                 'again to activate the fixer.'
             );
+
             return false;
         }
 
