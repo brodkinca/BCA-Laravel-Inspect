@@ -38,7 +38,7 @@ class InspectLintCommand extends Inspect
      *
      * @var string
      */
-    protected $description = 'Run PHP-CS-Fixer.';
+    protected $description = 'Run PHP\'s built-in linter.';
 
     /**
      * Run the command. Executed immediately.
