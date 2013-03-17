@@ -7,7 +7,7 @@
  *
  * @category  Command
  * @package   Laravel
- * @author    Brodkin CyberArts <support@brodkinca.com>
+ * @author    Brodkin CyberArts <oss@brodkinca.com>
  * @copyright 2013 Brodkin CyberArts.
  * @license   MIT
  * @version   GIT: $Id$
