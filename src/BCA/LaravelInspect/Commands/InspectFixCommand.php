@@ -47,6 +47,16 @@ class InspectFixCommand extends Inspect
      */
     public function fire()
     {
+        if (!$this->isInstalled()) {
+            $this->error(
+                'Due to dependency conflicts with Laravel\'s CLI tools PHP-CS-Fixer cannot be bundled with BCA\'s Laravel-Inspect package.'."\n\n".
+                'To continue, please install PHP-CS-Fixer in your system path by issuing the following command:'."\n\n".
+                "\t".'sudo curl http://cs.sensiolabs.org/get/php-cs-fixer.phar -o /usr/local/bin/php-cs-fixer'."\n\n".
+                'Once the tool has been installed you can run '.$this->name.' again to activate the fixer.'
+            );
+            return false;
+        }
+
         $this->info('Running php-cs-fixer...');
 
         if (!$this->option('dry-run') && !$this->option('force')) {
@@ -60,8 +70,8 @@ class InspectFixCommand extends Inspect
             }
         }
 
-        $command = realpath(__DIR__.'/../../../../vendor/bin/php-cs-fixer');
-        $command.= ' fix ';
+        $command = 'php-cs-fixer ';
+        $command.= 'fix ';
         $command.= base_path().'/'.$this->option('path');
         $command.= ' --level=psr1';
         if ($this->option('dry-run')) {
@@ -71,6 +81,22 @@ class InspectFixCommand extends Inspect
         passthru($command);
 
         $this->info('Done.');
+    }
+
+    /**
+     * Is PHP-CS-Fixer installed?
+     *
+     * @return boolean
+     */
+    public function isInstalled()
+    {
+        $which = exec('which php-cs-fixer');
+
+        if (file_exists($which)) {
+            return true;
+        }
+
+        return false;
     }
 
     /**

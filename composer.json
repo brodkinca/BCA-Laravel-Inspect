@@ -13,7 +13,6 @@
         "illuminate/support": "4.0.x",
         "symfony/console": "2.*",
         "squizlabs/php_codesniffer": "dev-master",
-        "fabpot/php-cs-fixer": "dev-master",
         "phpmd/phpmd": "dev-master"
     },
     "autoload": {
