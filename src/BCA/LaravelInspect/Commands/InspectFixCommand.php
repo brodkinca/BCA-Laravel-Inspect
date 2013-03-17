@@ -60,9 +60,10 @@ class InspectFixCommand extends Inspect
                 'PHP-CS-Fixer cannot be bundled with BCA\'s Laravel-Inspect '.
                 'package.'."\n\n".
                 'To continue, please install PHP-CS-Fixer in your system path '.
-                'by issuing the following command:'."\n\n".
+                'by issuing the following commands:'."\n\n".
                 "\t".'sudo curl http://cs.sensiolabs.org/get/php-cs-fixer.phar -o'.
-                ' /usr/local/bin/php-cs-fixer'."\n\n".
+                ' /usr/local/bin/php-cs-fixer'."\n".
+                "\t".'sudo chmod a+x /usr/local/bin/php-cs-fixer'."\n\n".
                 'Once the tool has been installed you can run '.$this->name.' '.
                 'again to activate the fixer.'
             );
