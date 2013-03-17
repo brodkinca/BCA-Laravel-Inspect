@@ -27,6 +27,13 @@ use Symfony\Component\Console\Input\InputOption;
 class InspectLintCommand extends Inspect
 {
     /**
+     * Name of CLI executable
+     *
+     * @var string
+     */
+    const CLI_TOOL = 'php';
+
+    /**
      * The console command name.
      *
      * @var string
@@ -47,6 +54,13 @@ class InspectLintCommand extends Inspect
      */
     public function fire()
     {
+        if (!$this->isInstalledGlobally()) {
+            $this->error(
+                'Cannot continue. PHP is not in your system path.'
+            );
+            return false;
+        }
+
         $this->info('Running PHP\'s built-in linter...');
 
         $path = base_path().'/'.$this->option('path');

@@ -28,6 +28,27 @@ use Symfony\Component\Console\Input\InputOption;
 abstract class Inspect extends Command
 {
     /**
+     * Name of CLI executable
+     *
+     * @var string
+     */
+    const CLI_TOOL = '';
+
+    /**
+     * Path to CLI tool being executed
+     *
+     * @var string
+     */
+    protected $pathCli;
+
+    /**
+     * Path to ruleset for this tool
+     *
+     * @var string
+     */
+    protected $pathRuleset;
+
+    /**
      * Get the console command options.
      *
      * @return array
@@ -37,5 +58,40 @@ abstract class Inspect extends Command
         return array(
             array('path', null, InputOption::VALUE_OPTIONAL, 'Path containing the files to be inspected.', 'app')
         );
+    }
+
+    /**
+     * Is CLI tool installed?
+     *
+     * @return boolean
+     */
+    public function isInstalledGlobally()
+    {
+        $which = exec('which '.$this::CLI_TOOL);
+
+        if (file_exists($which)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Set paths to executable and ruleset
+     *
+     * @return void
+     */
+    public function setPaths()
+    {
+        $pathPackage = realpath(__DIR__.'/../../../../');
+
+        // Path to CLI tool
+        $this->pathCli = $pathPackage.'/vendor/bin/'.$this::CLI_TOOL;
+
+        // Check for a local ruleset
+        $this->pathRuleset = $pathPackage.'/rulesets/'.$this::CLI_TOOL.'.xml';
+        if (is_readable(base_path().'/'.$this::CLI_TOOL.'.xml')) {
+            $this->pathRuleset = realpath(base_path().'/'.$this::CLI_TOOL.'.xml');
+        }
     }
 }

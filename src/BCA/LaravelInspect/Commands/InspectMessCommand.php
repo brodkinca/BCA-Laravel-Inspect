@@ -25,6 +25,13 @@ namespace BCA\LaravelInspect\Commands;
 class InspectMessCommand extends Inspect
 {
     /**
+     * Name of CLI executable
+     *
+     * @var string
+     */
+    const CLI_TOOL = 'phpmd';
+
+    /**
      * The console command name.
      *
      * @var string
@@ -47,17 +54,12 @@ class InspectMessCommand extends Inspect
     {
         $this->info('Runing PHP Mess Detector...');
 
-        $command = realpath(__DIR__.'/../../../../vendor/bin/phpmd');
-        $command.= ' ';
-        $command.= base_path().'/'.$this->option('path');
-        $command.= ' text ';
+        $this->setPaths();
 
-        // Check for a local ruleset
-        $ruleset = realpath(__DIR__.'/../../../../rulesets/phpmd.xml').' ';
-        if (is_readable(base_path().'/phpmd.xml')) {
-            $ruleset = realpath(base_path().'/phpmd.xml').' ';
-        }
-        $command.= $ruleset;
+        $command = $this->pathCli.' ';
+        $command.= base_path().'/'.$this->option('path').' ';
+        $command.= 'text ';
+        $command.= $this->pathRuleset;
 
         passthru($command);
 

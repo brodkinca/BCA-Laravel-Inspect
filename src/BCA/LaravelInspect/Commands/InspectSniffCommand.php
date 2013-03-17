@@ -25,6 +25,13 @@ namespace BCA\LaravelInspect\Commands;
 class InspectSniffCommand extends Inspect
 {
     /**
+     * Name of CLI executable
+     *
+     * @var string
+     */
+    const CLI_TOOL = 'phpcs';
+
+    /**
      * The console command name.
      *
      * @var string
@@ -47,20 +54,11 @@ class InspectSniffCommand extends Inspect
     {
         $this->info('Running PHP Code Sniffer...');
 
-        // Set path to phpcs executable
-        $command = realpath(__DIR__.'/../../../../vendor/bin/phpcs').' ';
+        $this->setPaths();
 
-        // Check for a local ruleset
-        $coding_standard = realpath(__DIR__.'/../../../../rulesets/phpcs.xml').' ';
-        if (is_readable(base_path().'/phpcs.xml')) {
-            $coding_standard = realpath(base_path().'/phpcs.xml').' ';
-        }
-        $command.= '--standard='.$coding_standard;
-
-        // Help out the folks who like tabs
-        $command.= '--tab-width=4 ';
-
-        // Set path to files to be inspected
+        $command = $this->pathCli.' ';
+        $command.= '--standard='.$this->pathRuleset.' ';
+        $command.= '--tab-width=4 '; // Laravel likes tabs, phpcs doesn't
         $command.= base_path().'/'.$this->option('path');
 
         passthru($command);

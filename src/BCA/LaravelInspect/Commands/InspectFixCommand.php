@@ -27,6 +27,13 @@ use Symfony\Component\Console\Input\InputOption;
 class InspectFixCommand extends Inspect
 {
     /**
+     * Name of CLI executable
+     *
+     * @var string
+     */
+    const CLI_TOOL = 'php-cs-fixer';
+
+    /**
      * The console command name.
      *
      * @var string
@@ -47,12 +54,17 @@ class InspectFixCommand extends Inspect
      */
     public function fire()
     {
-        if (!$this->isInstalled()) {
+        if (!$this->isInstalledGlobally()) {
             $this->error(
-                'Due to dependency conflicts with Laravel\'s CLI tools PHP-CS-Fixer cannot be bundled with BCA\'s Laravel-Inspect package.'."\n\n".
-                'To continue, please install PHP-CS-Fixer in your system path by issuing the following command:'."\n\n".
-                "\t".'sudo curl http://cs.sensiolabs.org/get/php-cs-fixer.phar -o /usr/local/bin/php-cs-fixer'."\n\n".
-                'Once the tool has been installed you can run '.$this->name.' again to activate the fixer.'
+                'Due to dependency conflicts with Laravel\'s CLI tools '.
+                'PHP-CS-Fixer cannot be bundled with BCA\'s Laravel-Inspect '.
+                'package.'."\n\n".
+                'To continue, please install PHP-CS-Fixer in your system path '.
+                'by issuing the following command:'."\n\n".
+                "\t".'sudo curl http://cs.sensiolabs.org/get/php-cs-fixer.phar -o'.
+                ' /usr/local/bin/php-cs-fixer'."\n\n".
+                'Once the tool has been installed you can run '.$this->name.' '.
+                'again to activate the fixer.'
             );
             return false;
         }
@@ -70,7 +82,7 @@ class InspectFixCommand extends Inspect
             }
         }
 
-        $command = 'php-cs-fixer ';
+        $command = self::CLI_TOOL.' ';
         $command.= 'fix ';
         $command.= base_path().'/'.$this->option('path');
         $command.= ' --level=psr1';
@@ -81,22 +93,6 @@ class InspectFixCommand extends Inspect
         passthru($command);
 
         $this->info('Done.');
-    }
-
-    /**
-     * Is PHP-CS-Fixer installed?
-     *
-     * @return boolean
-     */
-    public function isInstalled()
-    {
-        $which = exec('which php-cs-fixer');
-
-        if (file_exists($which)) {
-            return true;
-        }
-
-        return false;
     }
 
     /**
