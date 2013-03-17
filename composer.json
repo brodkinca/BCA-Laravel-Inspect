@@ -1,7 +1,11 @@
 {
     "name": "bca/laravel-inspect",
     "description": "Instant support for PHP Code Sniffer, PHP CS Fixer, and PHP MD in the Artisan CLI",
-    "keywords": "inspector,laravel,artisan",
+    "keywords": [
+        "inspector",
+        "artisan",
+        "laravel"
+    ],
     "authors": [
         {
             "name": "Brodkin CyberArts",
