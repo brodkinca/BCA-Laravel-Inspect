@@ -20,8 +20,5 @@
             "BCA\\LaravelInspect": "src/"
         }
     },
-    "minimum-stability": "dev",
-    "require-dev": {
-        "bca/laravel-inspect": "dev-master"
-    }
+    "minimum-stability": "dev"
 }
