@@ -57,6 +57,13 @@ abstract class Inspect extends Command
     protected $pathRuleset;
 
     /**
+     * Executes the command
+     *
+     * @return void
+     */
+    abstract public function fire();
+
+    /**
      * Get the console command options.
      *
      * @since 1.0.0
@@ -77,7 +84,7 @@ abstract class Inspect extends Command
      *
      * @return boolean
      */
-    public function isInstalledGlobally()
+    protected function isInstalledGlobally()
     {
         $which = exec('which '.$this::CLI_TOOL);
 

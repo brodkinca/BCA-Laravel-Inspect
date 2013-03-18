@@ -59,12 +59,14 @@
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
 <li class="method public "><a href="#method_fire" title="fire :: Run the command."><span class="description">Run the command.</span><pre>fire()</pre></a></li>
-<li class="method public inherited"><a href="#method_isInstalledGlobally" title="isInstalledGlobally :: Is CLI tool installed?"><span class="description">Is CLI tool installed?</span><pre>isInstalledGlobally()</pre></a></li>
 <li class="method public inherited"><a href="#method_setPaths" title="setPaths :: Set paths to executable and ruleset"><span class="description">Set paths to executable and ruleset</span><pre>setPaths()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header protected">» Protected
-                    <ul><li class="method protected inherited"><a href="#method_getOptions" title="getOptions :: Get the console command options."><span class="description">Get the console command options.</span><pre>getOptions()</pre></a></li></ul>
+                    <ul>
+<li class="method protected inherited"><a href="#method_getOptions" title="getOptions :: Get the console command options."><span class="description">Get the console command options.</span><pre>getOptions()</pre></a></li>
+<li class="method protected inherited"><a href="#method_isInstalledGlobally" title="isInstalledGlobally :: Is CLI tool installed?"><span class="description">Is CLI tool installed?</span><pre>isInstalledGlobally()</pre></a></li>
+</ul>
 </li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties
@@ -132,26 +134,6 @@
 </tr></table>
 </div></div>
 </div>
-<a id="method_isInstalledGlobally"></a><div class="element clickable method public method_isInstalledGlobally" data-toggle="collapse" data-target=".method_isInstalledGlobally .collapse">
-<h2>Is CLI tool installed?</h2>
-<pre>isInstalledGlobally() : boolean</pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered">
-<tr>
-<th>since</th>
-<td>1.0.1</td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\BCA\LaravelInspect\Commands\Inspect::isInstalledGlobally()</td>
-</tr>
-</table>
-<h3>Returns</h3>
-<div class="subelement response"><code>boolean</code></div>
-</div></div>
-</div>
 <a id="method_setPaths"></a><div class="element clickable method public method_setPaths" data-toggle="collapse" data-target=".method_setPaths .collapse">
 <h2>Set paths to executable and ruleset</h2>
 <pre>setPaths() : void</pre>
@@ -188,6 +170,26 @@
 </table>
 <h3>Returns</h3>
 <div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_isInstalledGlobally"></a><div class="element clickable method protected method_isInstalledGlobally" data-toggle="collapse" data-target=".method_isInstalledGlobally .collapse">
+<h2>Is CLI tool installed?</h2>
+<pre>isInstalledGlobally() : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>since</th>
+<td>1.0.1</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\BCA\LaravelInspect\Commands\Inspect::isInstalledGlobally()</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
 </div></div>
 </div>
 <h3>
@@ -273,7 +275,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
-            generated on 2013-03-17T12:09:26-07:00.<br></footer></div>
+            generated on 2013-03-18T10:57:33-07:00.<br></footer></div>
 </div>
 </body>
 </html>

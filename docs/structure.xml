@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project version="2.0.0a10" title="BCA Inspector Tools for Laravel">
-  <file path="Commands/Inspect.php" hash="59194d160ac46ab464ceb9bd0dce4bd3" package="Laravel\Artisan">
+  <file path="Commands/Inspect.php" hash="e74d0108085d5b848e9506caa3e4b4d5" package="Laravel\Artisan">
     <docblock line="3">
       <description><![CDATA[Inspector Tools for Artisan]]></description>
       <long-description><![CDATA[<p>PHP Version 5.3</p>]]></long-description>
@@ -10,7 +10,7 @@
       <tag line="3" name="author" description="Brodkin CyberArts &lt;oss@brodkinca.com&gt;"/>
       <tag line="3" name="copyright" description="2013 Brodkin CyberArts."/>
       <tag line="3" name="license" description="MIT"/>
-      <tag line="3" name="version" description="GIT: $Id: 4fe76127934f70a44dd6f4fcf4582595306dadd1 $"/>
+      <tag line="3" name="version" description="GIT: $Id: a7cba3c94785335fa85f7c491036b7c8ce88f50f $"/>
       <tag line="3" name="link" description="https://github.com/brodkinca/BCA-Laravel-Inspect" link="https://github.com/brodkinca/BCA-Laravel-Inspect"/>
     </docblock>
     <namespace-alias name="Command">Illuminate\Console\Command</namespace-alias>
@@ -63,45 +63,56 @@
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="BCA\LaravelInspect\Commands" line="66" package="Laravel\Artisan">
+      <method final="false" abstract="true" static="false" visibility="public" namespace="BCA\LaravelInspect\Commands" line="64" package="Laravel\Artisan">
+        <name>fire</name>
+        <full_name>fire</full_name>
+        <docblock line="59">
+          <description><![CDATA[Executes the command]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="59" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="BCA\LaravelInspect\Commands" line="73" package="Laravel\Artisan">
         <name>getOptions</name>
         <full_name>getOptions</full_name>
-        <docblock line="59">
+        <docblock line="66">
           <description><![CDATA[Get the console command options.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="59" name="since" description="1.0.0"/>
-          <tag line="59" name="return" description="" type="array">
+          <tag line="66" name="since" description="1.0.0"/>
+          <tag line="66" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="BCA\LaravelInspect\Commands" line="80" package="Laravel\Artisan">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="BCA\LaravelInspect\Commands" line="87" package="Laravel\Artisan">
         <name>isInstalledGlobally</name>
         <full_name>isInstalledGlobally</full_name>
-        <docblock line="73">
+        <docblock line="80">
           <description><![CDATA[Is CLI tool installed?]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="73" name="since" description="1.0.1"/>
-          <tag line="73" name="return" description="" type="boolean">
+          <tag line="80" name="since" description="1.0.1"/>
+          <tag line="80" name="return" description="" type="boolean">
             <type by_reference="false">boolean</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="BCA\LaravelInspect\Commands" line="98" package="Laravel\Artisan">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="BCA\LaravelInspect\Commands" line="105" package="Laravel\Artisan">
         <name>setPaths</name>
         <full_name>setPaths</full_name>
-        <docblock line="91">
+        <docblock line="98">
           <description><![CDATA[Set paths to executable and ruleset]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="91" name="since" description="1.0.1"/>
-          <tag line="91" name="return" description="" type="void">
+          <tag line="98" name="since" description="1.0.1"/>
+          <tag line="98" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
       </method>
     </class>
   </file>
-  <file path="Commands/InspectFixCommand.php" hash="965dd22d85d2708859163d840646280c" package="Laravel\Artisan">
+  <file path="Commands/InspectFixCommand.php" hash="fb8dbbafc995d12fc2d27bf1ba50c40a" package="Laravel\Artisan">
     <docblock line="3">
       <description><![CDATA[Inspector Tools for Artisan]]></description>
       <long-description><![CDATA[<p>PHP Version 5.3</p>]]></long-description>
@@ -111,7 +122,7 @@
       <tag line="3" name="author" description="Brodkin CyberArts &lt;oss@brodkinca.com&gt;"/>
       <tag line="3" name="copyright" description="2013 Brodkin CyberArts."/>
       <tag line="3" name="license" description="MIT"/>
-      <tag line="3" name="version" description="GIT: $Id: 4fe76127934f70a44dd6f4fcf4582595306dadd1 $"/>
+      <tag line="3" name="version" description="GIT: $Id: ff2da010e869e91c71f6ff2b59808a3c18ceba63 $"/>
       <tag line="3" name="link" description="https://github.com/brodkinca/BCA-Laravel-Inspect" link="https://github.com/brodkinca/BCA-Laravel-Inspect"/>
     </docblock>
     <namespace-alias name="InputOption">Symfony\Component\Console\Input\InputOption</namespace-alias>
@@ -184,7 +195,7 @@
       </method>
     </class>
   </file>
-  <file path="Commands/InspectLintCommand.php" hash="c26d7d02b4863de1b82ee0bce30b870c" package="Laravel\Artisan">
+  <file path="Commands/InspectLintCommand.php" hash="9374e0d1151d5fb57e2962b016281621" package="Laravel\Artisan">
     <docblock line="3">
       <description><![CDATA[Inspector Tools for Artisan]]></description>
       <long-description><![CDATA[<p>PHP Version 5.3</p>]]></long-description>
@@ -194,7 +205,7 @@
       <tag line="3" name="author" description="Brodkin CyberArts &lt;oss@brodkinca.com&gt;"/>
       <tag line="3" name="copyright" description="2013 Brodkin CyberArts."/>
       <tag line="3" name="license" description="MIT"/>
-      <tag line="3" name="version" description="GIT: $Id: 4fe76127934f70a44dd6f4fcf4582595306dadd1 $"/>
+      <tag line="3" name="version" description="GIT: $Id: 2082828511ed87b57449aef9d378ef8781d0486d $"/>
       <tag line="3" name="link" description="https://github.com/brodkinca/BCA-Laravel-Inspect" link="https://github.com/brodkinca/BCA-Laravel-Inspect"/>
     </docblock>
     <namespace-alias name="InputOption">Symfony\Component\Console\Input\InputOption</namespace-alias>
@@ -272,7 +283,7 @@
       </method>
     </class>
   </file>
-  <file path="Commands/InspectMessCommand.php" hash="1837bd866b56061aecc78b17f672e50f" package="Laravel\Artisan">
+  <file path="Commands/InspectMessCommand.php" hash="22d0a9bdd35056162baebcac8bc2b532" package="Laravel\Artisan">
     <docblock line="3">
       <description><![CDATA[Inspector Tools for Artisan]]></description>
       <long-description><![CDATA[<p>PHP Version 5.3</p>]]></long-description>
@@ -282,7 +293,7 @@
       <tag line="3" name="author" description="Brodkin CyberArts &lt;oss@brodkinca.com&gt;"/>
       <tag line="3" name="copyright" description="2013 Brodkin CyberArts."/>
       <tag line="3" name="license" description="MIT"/>
-      <tag line="3" name="version" description="GIT: $Id: 4fe76127934f70a44dd6f4fcf4582595306dadd1 $"/>
+      <tag line="3" name="version" description="GIT: $Id: f36af0672f311c5baa944b6ec817a62efb0b7867 $"/>
       <tag line="3" name="link" description="https://github.com/brodkinca/BCA-Laravel-Inspect" link="https://github.com/brodkinca/BCA-Laravel-Inspect"/>
     </docblock>
     <class final="false" abstract="false" namespace="BCA\LaravelInspect\Commands" line="27" package="Laravel\Artisan">
@@ -347,7 +358,7 @@
       </method>
     </class>
   </file>
-  <file path="Commands/InspectSniffCommand.php" hash="cef2fe8f38ead5dff37dfb61e04ddb4c" package="Laravel\Artisan">
+  <file path="Commands/InspectSniffCommand.php" hash="b1a0a404bc0d01cf21bfe7605498343d" package="Laravel\Artisan">
     <docblock line="3">
       <description><![CDATA[Inspector Tools for Artisan]]></description>
       <long-description><![CDATA[<p>PHP Version 5.3</p>]]></long-description>
@@ -357,7 +368,7 @@
       <tag line="3" name="author" description="Brodkin CyberArts &lt;oss@brodkinca.com&gt;"/>
       <tag line="3" name="copyright" description="2013 Brodkin CyberArts."/>
       <tag line="3" name="license" description="MIT"/>
-      <tag line="3" name="version" description="GIT: $Id: 4fe76127934f70a44dd6f4fcf4582595306dadd1 $"/>
+      <tag line="3" name="version" description="GIT: $Id: e56f339fe44410575bf125bf98417dc6594638bb $"/>
       <tag line="3" name="link" description="https://github.com/brodkinca/BCA-Laravel-Inspect" link="https://github.com/brodkinca/BCA-Laravel-Inspect"/>
     </docblock>
     <class final="false" abstract="false" namespace="BCA\LaravelInspect\Commands" line="27" package="Laravel\Artisan">
@@ -422,7 +433,7 @@
       </method>
     </class>
   </file>
-  <file path="LaravelInspectServiceProvider.php" hash="eea41095f3edb9b64081e1bda79884e9" package="Laravel\Artisan">
+  <file path="LaravelInspectServiceProvider.php" hash="71bcc7df3af08b0de6a46a8aefcbae17" package="Laravel\Artisan">
     <docblock line="3">
       <description><![CDATA[Inspector Tools for Artisan]]></description>
       <long-description><![CDATA[<p>PHP Version 5.3</p>]]></long-description>
@@ -432,7 +443,7 @@
       <tag line="3" name="author" description="Brodkin CyberArts &lt;oss@brodkinca.com&gt;"/>
       <tag line="3" name="copyright" description="2013 Brodkin CyberArts."/>
       <tag line="3" name="license" description="MIT"/>
-      <tag line="3" name="version" description="GIT: $Id: 4fe76127934f70a44dd6f4fcf4582595306dadd1 $"/>
+      <tag line="3" name="version" description="GIT: $Id: 0db509661d54f62dd6b4b851479ad512d61a80a2 $"/>
       <tag line="3" name="link" description="https://github.com/brodkinca/BCA-Laravel-Inspect" link="https://github.com/brodkinca/BCA-Laravel-Inspect"/>
     </docblock>
     <namespace-alias name="ServiceProvider">Illuminate\Support\ServiceProvider</namespace-alias>
