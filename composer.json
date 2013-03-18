@@ -27,9 +27,13 @@
         "phpmd/phpmd": "dev-master"
     },
     "autoload": {
+        "classmap": ["tests/"],
         "psr-0": {
             "BCA\\LaravelInspect": "src/"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    }
 }
