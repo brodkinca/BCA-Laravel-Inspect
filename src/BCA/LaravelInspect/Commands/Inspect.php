@@ -162,13 +162,17 @@ abstract class Inspect extends Command
     protected function setPaths()
     {
         $pathPackage = realpath(__DIR__.'/../../../../');
+        $pathBase = realpath(base_path());
 
         // Set CLI path
-        $this->pathCli = $pathPackage.'/vendor/bin/'.$this::CLI_TOOL;
+        $this->pathCli = $pathBase.'/vendor/bin/'.$this::CLI_TOOL;
+        if (!file_exists($this->pathCli)) {
+            $this->pathCli = $pathPackage.'/vendor/bin/'.$this::CLI_TOOL;
+        }
 
         // Set ruleset paths
         $this->pathRulesetStock = $pathPackage.'/rulesets/'.$this::CLI_TOOL.'.xml';
-        $this->pathRulesetLocal = realpath(base_path()).'/'.$this::CLI_TOOL.'.xml';
+        $this->pathRulesetLocal = $pathBase.'/'.$this::CLI_TOOL.'.xml';
 
         // Set active ruleset
         $this->pathRuleset = $this->pathRulesetStock;
