@@ -17,10 +17,10 @@ This package should be installed via Composer. You may either edit your project'
 
 #### Editing composer.json manually
 
-First, add `"bca/laravel-inspect": "dev-master"` to the `require-dev` section.
+First, add `"bca/laravel-inspect": "dev-master"` to the `require` section.
 
 ```json
-"require-dev": {
+"require": {
     "laravel/framework": "4.0.*",
     "bca/laravel-inspect": "dev-master"
 }
@@ -29,13 +29,13 @@ First, add `"bca/laravel-inspect": "dev-master"` to the `require-dev` section.
 Next, update Composer from the Terminal:
 
 ```sh
-composer update --dev
+composer update
 ```
 
 #### Installation via the command line
 
 ```sh
-composer require --dev bca/laravel-inspect:dev-master
+composer require bca/laravel-inspect:dev-master
 ```
 
 ### 2. Add the service provider
