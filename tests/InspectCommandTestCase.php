@@ -40,7 +40,6 @@ abstract class InspectCommandTestCase extends InspectTestCase
     public function testSetPaths()
     {
         $class = new $this->testClass();
-        $class->setPaths();
 
         $properties[] = $this->getProperty('pathCli');
         $properties[] = $this->getProperty('pathRuleset');

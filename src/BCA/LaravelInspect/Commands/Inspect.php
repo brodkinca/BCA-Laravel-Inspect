@@ -102,7 +102,7 @@ abstract class Inspect extends Command
      *
      * @return void
      */
-    public function setPaths()
+    protected function setPaths()
     {
         $pathPackage = realpath(__DIR__.'/../../../../');
 

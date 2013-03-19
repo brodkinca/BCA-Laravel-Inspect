@@ -54,6 +54,18 @@ class InspectSniffCommand extends Inspect
     protected $description = 'Run PHP Code Sniffer.';
 
     /**
+     * Constructor
+     *
+     * @since 1.0.2
+     */
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->setPaths();
+    }
+
+    /**
      * Run the command. Executed immediately.
      *
      * @since 1.0.0
@@ -63,8 +75,6 @@ class InspectSniffCommand extends Inspect
     public function fire()
     {
         $this->info('Running PHP Code Sniffer...');
-
-        $this->setPaths();
 
         $command = $this->pathCli.' ';
         $command.= '--standard='.$this->pathRuleset.' ';

@@ -54,6 +54,18 @@ class InspectMessCommand extends Inspect
     protected $description = 'Run PHP Mess Detector.';
 
     /**
+     * Constructor
+     *
+     * @since 1.0.2
+     */
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->setPaths();
+    }
+
+    /**
      * Run the command. Executed immediately.
      *
      * @since 1.0.0
@@ -63,8 +75,6 @@ class InspectMessCommand extends Inspect
     public function fire()
     {
         $this->info('Runing PHP Mess Detector...');
-
-        $this->setPaths();
 
         $command = $this->pathCli.' ';
         $command.= base_path().'/'.$this->option('path').' ';
