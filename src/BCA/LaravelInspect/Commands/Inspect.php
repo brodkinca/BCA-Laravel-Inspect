@@ -57,6 +57,24 @@ abstract class Inspect extends Command
     protected $pathRuleset;
 
     /**
+     * Potential path to local ruleset for this tool
+     *
+     * @since 1.0.2
+     *
+     * @var string
+     */
+    protected $pathRulesetLocal;
+
+    /**
+     * Path to stock ruleset for this tool
+     *
+     * @since 1.0.2
+     *
+     * @var string
+     */
+    protected $pathRulesetStock;
+
+    /**
      * Executes the command
      *
      * @return void
@@ -72,9 +90,48 @@ abstract class Inspect extends Command
      */
     protected function getOptions()
     {
-        return array(
-            array('path', null, InputOption::VALUE_OPTIONAL, 'Path containing the files to be inspected.', 'app')
+        // Allow path to be overridden
+        $options[] = array(
+            'path',
+            null,
+            InputOption::VALUE_OPTIONAL,
+            'Path containing the files to be inspected.',
+            'app'
         );
+
+        // Offer to install the ruleset locally if available
+        $this->setPaths();
+        if ($this->pathRulesetStock !== null) {
+            $options[] = array(
+                'install-ruleset',
+                null,
+                InputOption::VALUE_NONE,
+                'Copy our ruleset into your project.'
+            );
+        }
+
+        return $options;
+    }
+
+    /**
+     * Install ruleset in base path
+     *
+     * @since 1.0.2
+     *
+     * @return bool
+     */
+    protected function installRuleset()
+    {
+        if (
+            !file_exists($this->pathRulesetLocal) ||
+            $this->confirm('Overwrite local configuration with our copy? (y/n) [y]')
+        ) {
+            $copy = copy($this->pathRulesetStock, $this->pathRulesetLocal);
+
+            return $copy;
+        }
+
+        return false;
     }
 
     /**
@@ -106,13 +163,17 @@ abstract class Inspect extends Command
     {
         $pathPackage = realpath(__DIR__.'/../../../../');
 
-        // Path to CLI tool
+        // Set CLI path
         $this->pathCli = $pathPackage.'/vendor/bin/'.$this::CLI_TOOL;
 
-        // Check for a local ruleset
-        $this->pathRuleset = $pathPackage.'/rulesets/'.$this::CLI_TOOL.'.xml';
-        if (is_readable(base_path().'/'.$this::CLI_TOOL.'.xml')) {
-            $this->pathRuleset = realpath(base_path().'/'.$this::CLI_TOOL.'.xml');
+        // Set ruleset paths
+        $this->pathRulesetStock = $pathPackage.'/rulesets/'.$this::CLI_TOOL.'.xml';
+        $this->pathRulesetLocal = realpath(base_path()).'/'.$this::CLI_TOOL.'.xml';
+
+        // Set active ruleset
+        $this->pathRuleset = $this->pathRulesetStock;
+        if (is_readable($this->pathRulesetLocal)) {
+            $this->pathRuleset = $this->pathRulesetLocal;
         }
     }
 }

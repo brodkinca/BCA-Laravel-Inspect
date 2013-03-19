@@ -74,6 +74,12 @@ class InspectSniffCommand extends Inspect
      */
     public function fire()
     {
+        if ($this->option('install-ruleset')) {
+            if ($this->installRuleset()) {
+                $this->info('Copied ruleset to '.$this->pathRulesetLocal);
+            }
+        }
+
         $this->info('Running PHP Code Sniffer...');
 
         $command = $this->pathCli.' ';

@@ -31,6 +31,48 @@ abstract class InspectCommandTestCase extends InspectTestCase
     }
 
     /**
+     * Test that rulesets are installed successfully
+     *
+     * @since 1.0.2
+     *
+     * @return void
+     */
+    public function testInstallRuleset()
+    {
+        // Instantiate class
+        $class = new $this->testClass();
+
+        // Get ruleset paths
+        $pathRulesetLocal = $this->getProperty('pathRulesetLocal')->getValue($class);
+        $pathRulesetStock = $this->getProperty('pathRulesetStock')->getValue($class);
+
+        // If this command uses a ruleset...
+        if ($pathRulesetStock !== null) {
+
+            // Reflect protected mathod
+            $method = $this->getMethod('installRuleset');
+
+            // Remove local ruleset, if exists
+            @unlink($pathRulesetLocal);
+
+            $this->assertThat($pathRulesetStock, $this->fileExists());
+            $this->assertThat(
+                $pathRulesetLocal,
+                $this->logicalNot($this->fileExists())
+            );
+
+            $action = $method->invoke($class);
+            $this->assertThat($action, $this->isTrue());
+
+            $this->assertThat($pathRulesetLocal, $this->fileExists());
+            $this->assertXmlFileEqualsXmlFile($pathRulesetLocal, $pathRulesetStock);
+
+            // Remove local ruleset
+            @unlink($pathRulesetLocal);
+        }
+    }
+
+    /**
      * Test that directory paths are set and valid
      *
      * @since 1.0.1
@@ -43,11 +85,15 @@ abstract class InspectCommandTestCase extends InspectTestCase
 
         $properties[] = $this->getProperty('pathCli');
         $properties[] = $this->getProperty('pathRuleset');
+        $properties[] = $this->getProperty('pathRulesetStock');
 
         foreach ($properties as $property) {
             $this->assertThat($property->isProtected(), $this->isTrue());
             $this->assertThat($property->getValue($class), $this->fileExists());
         }
+
+        $propertyRulesetLocal = $this->getProperty('pathRulesetLocal');
+        $this->assertThat($propertyRulesetLocal->isProtected(), $this->isTrue());
     }
 
     /**
