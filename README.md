@@ -68,3 +68,34 @@ You may also run `php artisan inspect:sniff --install-ruleset` to copy our rules
 To create a custom ruleset for use with the `inspect:mess` command just drop a ruleset named `phpmd.xml` in the root of your Laravel installation.  The PHPMD website offers instructions on how to [create a ruleset](http://phpmd.org/documentation/creating-a-ruleset.html).
 
 You may also run `php artisan inspect:mess --install-ruleset` to copy our rules to your project so that you can modify them.
+
+
+## Contributing
+
+This project will be maintained on Github at https://github.com/brodkinca/BCA-Laravel-Inspect.  You will also find this project's [Issue Tracker](https://github.com/brodkinca/BCA-Laravel-Inspect/issues) there.
+
+### Versioning
+
+This library will be maintained under the Semantic Versioning guidelines.
+
+Releases will be numbered with the following format:
+
+```
+<major>.<minor>.<patch>
+```
+
+And constructed with the following guidelines:
+
+* Breaking backward compatibility bumps the major (and resets the minor and patch)
+* New additions without breaking backward compatibility bumps the minor (and resets the patch)
+* Bug fixes and misc changes bump the patch
+
+For more information on SemVer, please visit http://semver.org/.
+
+### Testing
+
+Due to the peculiarities of the Artisan CLI it is not possible to run the unit tests outside of the context of a full Laravel application. Instead, this package should be installed within a copy of Laravel, as a workbench application, and then added to that installation's phpunit.xml file. For this reason it is recommended that you run a development copy of Laravel for package development.
+
+Please run all unit tests before submitting any code!
+
+**NOTE:** Running the unit tests will erase any phpcs/phpmd configuration files in the root of your project without warning!!!
