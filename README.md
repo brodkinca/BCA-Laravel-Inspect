@@ -59,13 +59,13 @@ Both PHP Code Sniffer and PHP Mess Detector support the creation of custom rules
 
 #### PHP Code Sniffer
 
-To create a custom ruleset for use with the `inspect:sniff` command just drop a ruleset named `phpcs.xml` in the root of your Laravel installation.  You may then use this [annotated ruleset](http://pear.php.net/manual/en/package.php.php-codesniffer.annotated-ruleset.php) as a guide in creating your own.
+To create a custom ruleset for use with the `inspect:sniff` command just drop a ruleset named `phpcs.xml` in Laravel's `app` directory.  You may then use this [annotated ruleset](http://pear.php.net/manual/en/package.php.php-codesniffer.annotated-ruleset.php) as a guide in creating your own.
 
 You may also run `php artisan inspect:sniff --install-ruleset` to copy our rules to your project so that you can modify them.
 
 #### PHP Mess Detector
 
-To create a custom ruleset for use with the `inspect:mess` command just drop a ruleset named `phpmd.xml` in the root of your Laravel installation.  The PHPMD website offers instructions on how to [create a ruleset](http://phpmd.org/documentation/creating-a-ruleset.html).
+To create a custom ruleset for use with the `inspect:mess` command just drop a ruleset named `phpmd.xml` in Laravel's `app` directory.  The PHPMD website offers instructions on how to [create a ruleset](http://phpmd.org/documentation/creating-a-ruleset.html).
 
 You may also run `php artisan inspect:mess --install-ruleset` to copy our rules to your project so that you can modify them.
 
@@ -98,4 +98,4 @@ Due to the peculiarities of the Artisan CLI it is not possible to run the unit t
 
 Please run all unit tests before submitting any code!
 
-**NOTE:** Running the unit tests will erase any phpcs/phpmd configuration files in the root of your project without warning!!!
+**NOTE:** Running the unit tests will erase any phpcs/phpmd configuration files in your `app` directory without warning!!!

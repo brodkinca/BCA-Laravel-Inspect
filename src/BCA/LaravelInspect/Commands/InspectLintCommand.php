@@ -64,6 +64,8 @@ class InspectLintCommand extends Inspect
      */
     public function fire()
     {
+        parent::fire();
+
         if (!$this->isInstalledGlobally()) {
             $this->error(
                 'Cannot continue. PHP is not in your system path.'

@@ -77,9 +77,22 @@ abstract class Inspect extends Command
     /**
      * Executes the command
      *
+     * @since  1.0.2
+     *
      * @return void
      */
-    abstract public function fire();
+    public function fire()
+    {
+        // Notify user if using local ruleset
+        if (
+            $this->pathRulesetLocal !== null &&
+            is_readable($this->pathRulesetLocal)
+        ) {
+            $this->info(
+                'Local ruleset file found. Default ruleset will be ignored.'
+            );
+        }
+    }
 
     /**
      * Get the console command options.
@@ -172,7 +185,7 @@ abstract class Inspect extends Command
 
         // Set ruleset paths
         $this->pathRulesetStock = $pathPackage.'/rulesets/'.$this::CLI_TOOL.'.xml';
-        $this->pathRulesetLocal = $pathBase.'/'.$this::CLI_TOOL.'.xml';
+        $this->pathRulesetLocal = $pathBase.'/app/'.$this::CLI_TOOL.'.xml';
 
         // Set active ruleset
         $this->pathRuleset = $this->pathRulesetStock;

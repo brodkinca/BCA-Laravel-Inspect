@@ -74,6 +74,8 @@ class InspectMessCommand extends Inspect
      */
     public function fire()
     {
+        parent::fire();
+
         if ($this->option('install-ruleset')) {
             if ($this->installRuleset()) {
                 $this->info('Copied ruleset to '.$this->pathRulesetLocal);

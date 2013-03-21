@@ -56,6 +56,8 @@ class InspectFixCommand extends Inspect
      */
     public function fire()
     {
+        parent::fire();
+
         if (!$this->isInstalledGlobally()) {
             $this->error(
                 'Due to dependency conflicts with Laravel\'s CLI tools '.
