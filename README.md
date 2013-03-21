@@ -1,5 +1,7 @@
 # BCA Inspector Tools for Laravel
 
+[![Build Status](https://travis-ci.org/brodkinca/BCA-Laravel-Inspect.png)](https://travis-ci.org/brodkinca/BCA-Laravel-Inspect)
+
 Inspect your code via the Artisan CLI using industry-standard tools.
 
 This Laravel 4 package adds several pre-configured tools to the Artisan CLI, speeding up your development process and making your code cleaner.
