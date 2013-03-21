@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project version="2.0.0a10" title="BCA Inspector Tools for Laravel">
-  <file path="Commands/Inspect.php" hash="16a7fd868b322ee6217fdef57b9d4408" package="Laravel\Artisan">
+  <file path="Commands/Inspect.php" hash="7e0759329f7b67351ba98c0d3b3a21f4" package="Laravel\Artisan">
     <docblock line="3">
       <description><![CDATA[Inspector Tools for Artisan]]></description>
       <long-description><![CDATA[<p>PHP Version 5.3</p>]]></long-description>
@@ -10,7 +10,7 @@
       <tag line="3" name="author" description="Brodkin CyberArts &lt;oss@brodkinca.com&gt;"/>
       <tag line="3" name="copyright" description="2013 Brodkin CyberArts."/>
       <tag line="3" name="license" description="MIT"/>
-      <tag line="3" name="version" description="GIT: $Id: 5e61e79de816a0ca566994fd5cd2e071187f45fe $"/>
+      <tag line="3" name="version" description="GIT: $Id: 6f52bdd761218eac34e62d29a5a8627d9db6ac1e $"/>
       <tag line="3" name="link" description="https://github.com/brodkinca/BCA-Laravel-Inspect" link="https://github.com/brodkinca/BCA-Laravel-Inspect"/>
     </docblock>
     <namespace-alias name="Command">Illuminate\Console\Command</namespace-alias>
@@ -87,68 +87,69 @@
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="true" static="false" visibility="public" namespace="BCA\LaravelInspect\Commands" line="82" package="Laravel\Artisan">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="BCA\LaravelInspect\Commands" line="84" package="Laravel\Artisan">
         <name>fire</name>
         <full_name>fire</full_name>
         <docblock line="77">
           <description><![CDATA[Executes the command]]></description>
           <long-description><![CDATA[]]></long-description>
+          <tag line="77" name="since" description="1.0.2"/>
           <tag line="77" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="BCA\LaravelInspect\Commands" line="91" package="Laravel\Artisan">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="BCA\LaravelInspect\Commands" line="104" package="Laravel\Artisan">
         <name>getOptions</name>
         <full_name>getOptions</full_name>
-        <docblock line="84">
+        <docblock line="97">
           <description><![CDATA[Get the console command options.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="84" name="since" description="1.0.0"/>
-          <tag line="84" name="return" description="" type="array">
+          <tag line="97" name="since" description="1.0.0"/>
+          <tag line="97" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="BCA\LaravelInspect\Commands" line="123" package="Laravel\Artisan">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="BCA\LaravelInspect\Commands" line="136" package="Laravel\Artisan">
         <name>installRuleset</name>
         <full_name>installRuleset</full_name>
-        <docblock line="116">
+        <docblock line="129">
           <description><![CDATA[Install ruleset in base path]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="116" name="since" description="1.0.2"/>
-          <tag line="116" name="return" description="" type="bool">
+          <tag line="129" name="since" description="1.0.2"/>
+          <tag line="129" name="return" description="" type="bool">
             <type by_reference="false">bool</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="BCA\LaravelInspect\Commands" line="144" package="Laravel\Artisan">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="BCA\LaravelInspect\Commands" line="157" package="Laravel\Artisan">
         <name>isInstalledGlobally</name>
         <full_name>isInstalledGlobally</full_name>
-        <docblock line="137">
+        <docblock line="150">
           <description><![CDATA[Is CLI tool installed?]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="137" name="since" description="1.0.1"/>
-          <tag line="137" name="return" description="" type="boolean">
+          <tag line="150" name="since" description="1.0.1"/>
+          <tag line="150" name="return" description="" type="boolean">
             <type by_reference="false">boolean</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="BCA\LaravelInspect\Commands" line="162" package="Laravel\Artisan">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="BCA\LaravelInspect\Commands" line="175" package="Laravel\Artisan">
         <name>setPaths</name>
         <full_name>setPaths</full_name>
-        <docblock line="155">
+        <docblock line="168">
           <description><![CDATA[Set paths to executable and ruleset]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="155" name="since" description="1.0.1"/>
-          <tag line="155" name="return" description="" type="void">
+          <tag line="168" name="since" description="1.0.1"/>
+          <tag line="168" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
       </method>
     </class>
   </file>
-  <file path="Commands/InspectFixCommand.php" hash="fb8dbbafc995d12fc2d27bf1ba50c40a" package="Laravel\Artisan">
+  <file path="Commands/InspectFixCommand.php" hash="3a301dfc978f483c6abe6c6afd835147" package="Laravel\Artisan">
     <docblock line="3">
       <description><![CDATA[Inspector Tools for Artisan]]></description>
       <long-description><![CDATA[<p>PHP Version 5.3</p>]]></long-description>
@@ -218,20 +219,20 @@
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="BCA\LaravelInspect\Commands" line="107" package="Laravel\Artisan">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="BCA\LaravelInspect\Commands" line="109" package="Laravel\Artisan">
         <name>getOptions</name>
         <full_name>getOptions</full_name>
-        <docblock line="102">
+        <docblock line="104">
           <description><![CDATA[Get the console command options.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="102" name="return" description="" type="array">
+          <tag line="104" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
       </method>
     </class>
   </file>
-  <file path="Commands/InspectLintCommand.php" hash="9374e0d1151d5fb57e2962b016281621" package="Laravel\Artisan">
+  <file path="Commands/InspectLintCommand.php" hash="4baa51b5e969336c6e4e3611d553c1c6" package="Laravel\Artisan">
     <docblock line="3">
       <description><![CDATA[Inspector Tools for Artisan]]></description>
       <long-description><![CDATA[<p>PHP Version 5.3</p>]]></long-description>
@@ -305,21 +306,21 @@
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="BCA\LaravelInspect\Commands" line="93" package="Laravel\Artisan">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="BCA\LaravelInspect\Commands" line="95" package="Laravel\Artisan">
         <name>getOptions</name>
         <full_name>getOptions</full_name>
-        <docblock line="86">
+        <docblock line="88">
           <description><![CDATA[Get the console command options.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="86" name="since" description="1.0.0"/>
-          <tag line="86" name="return" description="" type="array">
+          <tag line="88" name="since" description="1.0.0"/>
+          <tag line="88" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
       </method>
     </class>
   </file>
-  <file path="Commands/InspectMessCommand.php" hash="10904d8b397ae99734b9772d5e15de20" package="Laravel\Artisan">
+  <file path="Commands/InspectMessCommand.php" hash="e3118c068984c3401ea60a67d5dee236" package="Laravel\Artisan">
     <docblock line="3">
       <description><![CDATA[Inspector Tools for Artisan]]></description>
       <long-description><![CDATA[<p>PHP Version 5.3</p>]]></long-description>
@@ -403,7 +404,7 @@
       </method>
     </class>
   </file>
-  <file path="Commands/InspectSniffCommand.php" hash="b6b30a4308f9025e08ea886f7926f853" package="Laravel\Artisan">
+  <file path="Commands/InspectSniffCommand.php" hash="4a2dfb23747389b49a4cda6a85500379" package="Laravel\Artisan">
     <docblock line="3">
       <description><![CDATA[Inspector Tools for Artisan]]></description>
       <long-description><![CDATA[<p>PHP Version 5.3</p>]]></long-description>
