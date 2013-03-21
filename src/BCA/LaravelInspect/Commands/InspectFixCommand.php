@@ -78,12 +78,10 @@ class InspectFixCommand extends Inspect
         $this->info('Running php-cs-fixer...');
 
         if (!$this->option('dry-run') && !$this->option('force')) {
-            if (
-                !$this->confirm(
-                    'This will permanently modify your code to comply with PSR-1. '."\n".
-                    'Are you sure that you want to continue? (y/n)[y]'
-                )
-            ) {
+            if (!$this->confirm(
+                'This will permanently modify your code to comply with PSR-1. '."\n".
+                'Are you sure that you want to continue? (y/n)[y]'
+            )) {
                 return false;
             }
         }

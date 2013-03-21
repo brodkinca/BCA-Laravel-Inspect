@@ -84,8 +84,7 @@ abstract class Inspect extends Command
     public function fire()
     {
         // Notify user if using local ruleset
-        if (
-            $this->pathRulesetLocal !== null &&
+        if ($this->pathRulesetLocal !== null &&
             is_readable($this->pathRulesetLocal)
         ) {
             $this->info(
@@ -135,8 +134,7 @@ abstract class Inspect extends Command
      */
     protected function installRuleset()
     {
-        if (
-            !file_exists($this->pathRulesetLocal) ||
+        if (!file_exists($this->pathRulesetLocal) ||
             $this->confirm('Overwrite local configuration with our copy? (y/n) [y]')
         ) {
             $copy = copy($this->pathRulesetStock, $this->pathRulesetLocal);
