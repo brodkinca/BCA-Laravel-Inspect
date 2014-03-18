@@ -25,11 +25,11 @@ This package should be installed via Composer. You may either edit your project'
 
 #### Option 1: Edit composer.json manually
 
-First, add `bca/laravel-inspect` to the `require-dev` section.
+First, add `bca/laravel-inspect` to the `require` section.
 
 ```json
 { 
-    "require-dev": {
+    "require": {
         "bca/laravel-inspect": "@stable"
     }
 }
@@ -44,7 +44,7 @@ composer update
 #### Option 2: Install via the command line
 
 ```sh
-composer require --dev bca/laravel-inspect:dev-master
+composer require bca/laravel-inspect:dev-master
 ```
 
 ### 2. Add the service provider
