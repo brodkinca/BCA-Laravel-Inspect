@@ -1,6 +1,12 @@
 # BCA Inspector Tools for Laravel
 
-[![Build Status](https://travis-ci.org/brodkinca/BCA-Laravel-Inspect.png)](https://travis-ci.org/brodkinca/BCA-Laravel-Inspect)
+[![Build Status](https://secure.travis-ci.org/brodkinca/BCA-Laravel-Inspect.png)](http://travis-ci.org/brodkinca/BCA-Laravel-Inspect)
+[![Dependencies Status](https://depending.in/brodkinca/BCA-Laravel-Inspect.png)](http://depending.in/brodkinca/BCA-Laravel-Inspect)
+[![Coverage Status](https://coveralls.io/repos/brodkinca/BCA-Laravel-Inspect/badge.png)](https://coveralls.io/r/brodkinca/BCA-Laravel-Inspect)
+
+[![Latest Stable Version](https://poser.pugx.org/bca/laravel-inspect/v/stable.png)](https://packagist.org/packages/bca/laravel-inspect) 
+[![Total Downloads](https://poser.pugx.org/bca/laravel-inspect/downloads.png)](https://packagist.org/packages/bca/laravel-inspect) 
+[![License](https://poser.pugx.org/bca/laravel-inspect/license.png)](https://packagist.org/packages/bca/laravel-inspect)
 
 Inspect your code via the Artisan CLI using industry-standard tools.
 
