@@ -183,12 +183,15 @@ abstract class Inspect extends Command
 
         // Set ruleset paths
         $this->pathRulesetStock = $pathPackage.'/rulesets/'.$this::CLI_TOOL.'.xml';
-        $this->pathRulesetLocal = $pathBase.'/app/'.$this::CLI_TOOL.'.xml';
+        $this->pathRulesetLocal = $pathBase.'/'.$this::CLI_TOOL.'.xml';
+        $this->pathRulesetLocalLegacy = $pathBase.'/app/'.$this::CLI_TOOL.'.xml';
 
         // Set active ruleset
         $this->pathRuleset = $this->pathRulesetStock;
         if (is_readable($this->pathRulesetLocal)) {
             $this->pathRuleset = $this->pathRulesetLocal;
+        } else if (is_readable($this->pathRulesetLocalLegacy)) {
+            $this->pathRuleset = $this->pathRulesetLocalLegacy;
         }
     }
 }
