@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="bca/laravel-inspect" default="test">
+
+    <target name="test">
+
+        <phpcodesniffer 
+            standard="phpcs.xml" 
+            showSniffs="false" 
+            showWarnings="true" 
+            haltonerror="true">
+            <fileset dir="src">
+                <include name="**/*.php"/>
+            </fileset>
+            <fileset dir="tests">
+                <include name="**/*.php"/>
+            </fileset>
+            <formatter type="full" usefile="false"/>
+        </phpcodesniffer>
+
+    </target>
+
+</project>
