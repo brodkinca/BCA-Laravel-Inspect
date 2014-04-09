@@ -190,7 +190,7 @@ abstract class Inspect extends Command
         $this->pathRuleset = $this->pathRulesetStock;
         if (is_readable($this->pathRulesetLocal)) {
             $this->pathRuleset = $this->pathRulesetLocal;
-        } else if (is_readable($this->pathRulesetLocalLegacy)) {
+        } elseif (is_readable($this->pathRulesetLocalLegacy)) {
             $this->pathRuleset = $this->pathRulesetLocalLegacy;
         }
     }
