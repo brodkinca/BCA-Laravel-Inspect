@@ -3,9 +3,7 @@ php:
   - 5.5
 before_script:
   - composer install --prefer-source --no-interaction
-  - pyrus channel-discover pear.phing.info
-  - pyrus install --optionaldeps phing/phing
   - pyrus install pear/PHP_CodeSniffer
   - phpenv rehash
 script:
-  - phing
+  - php phing.phar
