@@ -17,6 +17,8 @@
 
 namespace BCA\LaravelInspect\Commands;
 
+use Symfony\Component\Console\Input\InputOption;
+
 /**
  * Artisan Inspect:Sniff Command
  *
@@ -53,6 +55,12 @@ class InspectSniffCommand extends Inspect
      */
     protected $description = 'Run PHP Code Sniffer.';
 
+    protected $availableCommandOptions = array(
+        'report',
+        'report-file',
+        'tab-width',
+    );
+
     /**
      * Constructor
      *
@@ -63,6 +71,46 @@ class InspectSniffCommand extends Inspect
         parent::__construct();
 
         $this->setPaths();
+    }
+
+    /**
+     * Get the console command options.
+     *
+     * @since 1.0.0
+     *
+     * @return array
+     */
+    protected function getOptions()
+    {
+        $options = parent::getOptions();
+
+        // --report
+        $options[] = array(
+            'report',
+            null,
+            InputOption::VALUE_REQUIRED,
+            'Print either the "full", "xml", "checkstyle", "csv", "json", "emacs", "source", "summary", "svnblame",
+"gitblame", "hgblame" or "notifysend" report (the "full" report is printed by default)',
+        );
+
+        // --report-file
+        $options[] = array(
+            'report-file',
+            null,
+            InputOption::VALUE_REQUIRED,
+            'Write the report to the specified file path',
+        );
+
+        // --tab-width
+        $options[] = array(
+            'tab-width',
+            null,
+            InputOption::VALUE_REQUIRED,
+            'Write the report to the specified file path',
+            4
+        );
+
+        return $options;
     }
 
     /**
@@ -84,13 +132,34 @@ class InspectSniffCommand extends Inspect
 
         $this->info('Running PHP Code Sniffer...');
 
-        $command = $this->pathCli.' ';
-        $command.= '--standard='.$this->pathRuleset.' ';
-        $command.= '--tab-width=4 '; // Laravel likes tabs, phpcs doesn't
-        $command.= base_path().'/'.$this->option('path');
+        $commandParts = array(
+            $this->pathCli,
+            '--standard='.$this->pathRuleset,
+            sprintf('--tab-width=%d', $this->option('tab-width')), // Laravel likes tabs, phpcs doesn't
+        );
 
+        $this->appendCommandOptions($commandParts);
+
+        $commandParts[] = sprintf('%s/%s', base_path(), $this->option('path'));
+
+        $command = implode(' ', $commandParts);
         passthru($command);
 
         $this->info('Done.');
+    }
+
+    private function appendCommandOptions(&$commandParts)
+    {
+        foreach ($this->availableCommandOptions as $optionKey) {
+            // Skip tab-width option because it's appended by default
+            if ($optionKey == 'tab-width') {
+                continue;
+            }
+
+            $optionValue = $this->option($optionKey);
+            if (!empty($optionValue)) {
+                $commandParts[] = sprintf('--%s=%s', $optionKey, $optionValue);
+            }
+        }
     }
 }
