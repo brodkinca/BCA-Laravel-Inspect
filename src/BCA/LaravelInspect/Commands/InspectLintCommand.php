@@ -60,7 +60,7 @@ class InspectLintCommand extends Inspect
      *
      * @since 1.0.0
      *
-     * @return void
+     * @return int CLI tool exit code.
      */
     public function fire()
     {
@@ -80,9 +80,11 @@ class InspectLintCommand extends Inspect
 
         $command = 'find '.$path.' -name \'*.php\' -print0 | xargs -0 -n1 -P10 php -l';
 
-        passthru($command);
+        passthru($command, $exitCode);
 
         $this->info('Done.');
+
+        return $exitCode;
     }
 
     /**

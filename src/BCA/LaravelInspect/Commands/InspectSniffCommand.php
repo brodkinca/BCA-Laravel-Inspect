@@ -125,7 +125,7 @@ class InspectSniffCommand extends Inspect
      *
      * @since 1.0.0
      *
-     * @return void
+     * @return int CLI tool exit code.
      */
     public function fire()
     {
@@ -150,9 +150,12 @@ class InspectSniffCommand extends Inspect
         $commandParts[] = sprintf('%s/%s', base_path(), $this->option('path'));
 
         $command = implode(' ', $commandParts);
-        passthru($command);
+
+        passthru($command, $exitCode);
 
         $this->info('Done.');
+
+        return $exitCode;
     }
 
     /**

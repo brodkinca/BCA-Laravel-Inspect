@@ -52,7 +52,7 @@ class InspectFixCommand extends Inspect
     /**
      * Run the command. Executed immediately.
      *
-     * @return void
+     * @return int CLI tool exit code.
      */
     public function fire()
     {
@@ -94,9 +94,11 @@ class InspectFixCommand extends Inspect
             $command.= ' --dry-run';
         }
 
-        passthru($command);
+        passthru($command, $exitCode);
 
         $this->info('Done.');
+
+        return $exitCode;
     }
 
     /**

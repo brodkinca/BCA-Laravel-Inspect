@@ -70,7 +70,7 @@ class InspectMessCommand extends Inspect
      *
      * @since 1.0.0
      *
-     * @return void
+     * @return int CLI tool exit code.
      */
     public function fire()
     {
@@ -89,8 +89,10 @@ class InspectMessCommand extends Inspect
         $command.= 'text ';
         $command.= $this->pathRuleset;
 
-        passthru($command);
+        passthru($command, $exitCode);
 
         $this->info('Done.');
+
+        return $exitCode;
     }
 }
