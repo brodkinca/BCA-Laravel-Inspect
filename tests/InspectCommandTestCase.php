@@ -124,7 +124,13 @@ abstract class InspectCommandTestCase extends InspectTestCase
             $this->assertInternalType('int', $option[2]);
             $this->assertInternalType('string', $option[3]);
             if (isset($option[4])) {
-                $this->assertInternalType('string', $option[4]);
+                $this->assertThat(
+                    $option[4],
+                    $this->logicalOr(
+                        $this->isType('string'),
+                        $this->isType('int')
+                    )
+                );
             }
         }
     }
