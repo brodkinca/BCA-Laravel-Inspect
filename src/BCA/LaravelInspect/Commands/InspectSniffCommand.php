@@ -55,6 +55,13 @@ class InspectSniffCommand extends Inspect
      */
     protected $description = 'Run PHP Code Sniffer.';
 
+    /**
+     * The available command options.
+     *
+     * @since 1.3.0
+     *
+     * @var array
+     */
     protected $availableCommandOptions = array(
         'report',
         'report-file',
@@ -148,7 +155,16 @@ class InspectSniffCommand extends Inspect
         $this->info('Done.');
     }
 
-    private function appendCommandOptions(&$commandParts)
+    /**
+     * Append Options to CLI Command
+     *
+     * @param Array $commandParts
+     *
+     * @since 1.3.0
+     *
+     * @return Array
+     */
+    private function appendCommandOptions(Array &$commandParts)
     {
         foreach ($this->availableCommandOptions as $optionKey) {
             // Skip tab-width option because it's appended by default
