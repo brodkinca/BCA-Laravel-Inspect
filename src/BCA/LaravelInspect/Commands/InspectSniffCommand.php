@@ -90,7 +90,7 @@ class InspectSniffCommand extends Inspect
             null,
             InputOption::VALUE_REQUIRED,
             'Print either the "full", "xml", "checkstyle", "csv", "json", "emacs", "source", "summary", "svnblame",
-"gitblame", "hgblame" or "notifysend" report (the "full" report is printed by default)',
+"gitblame", "hgblame" or "notifysend" report (the "full" report is printed by default).',
         );
 
         // --report-file
@@ -98,7 +98,7 @@ class InspectSniffCommand extends Inspect
             'report-file',
             null,
             InputOption::VALUE_REQUIRED,
-            'Write the report to the specified file path',
+            'Write the report to the specified file path.',
         );
 
         // --tab-width
@@ -106,7 +106,7 @@ class InspectSniffCommand extends Inspect
             'tab-width',
             null,
             InputOption::VALUE_REQUIRED,
-            'Write the report to the specified file path',
+            'Set the number of spaces which should be substituted for each tab when sniffing.',
             4
         );
 
