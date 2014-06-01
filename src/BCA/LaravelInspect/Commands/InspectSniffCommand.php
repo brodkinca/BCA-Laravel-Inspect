@@ -62,7 +62,7 @@ class InspectSniffCommand extends Inspect
      *
      * @var array
      */
-    protected $availableCommandOptions = array(
+    protected $options = array(
         'report',
         'report-file',
         'tab-width',
@@ -166,7 +166,7 @@ class InspectSniffCommand extends Inspect
      */
     private function appendCommandOptions(Array &$commandParts)
     {
-        foreach ($this->availableCommandOptions as $optionKey) {
+        foreach ($this->options as $optionKey) {
             // Skip tab-width option because it's appended by default
             if ($optionKey == 'tab-width') {
                 continue;
