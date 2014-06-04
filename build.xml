@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="bca/laravel-inspect" default="test">
+<project name="laravel-inspect" default="default">
 
-    <target name="test">
+  <import file="/Volumes/Development/PHP/BCA-PHP-Architect/build.default.xml"/>
 
-        <phpcodesniffer 
-            standard="phpcs.xml" 
-            showSniffs="false" 
-            showWarnings="true" 
-            haltonerror="true">
-            <fileset dir="src">
-                <include name="**/*.php"/>
-            </fileset>
-            <fileset dir="tests">
-                <include name="**/*.php"/>
-            </fileset>
-            <formatter type="full" usefile="false"/>
-        </phpcodesniffer>
+  <target name="phpunit"/>
 
-    </target>
+  <target name="phpunit-ci"/>
+
+  <!-- Hook: Before Architect Tasks -->
+  <target name="project-pre"/>
+
+  <!-- Hook: After Architect Tasks -->
+  <target name="project-post"/>
+
+  <!-- Override any task by creating a task with the same name. -->
+  <!-- <target name="..."></target> -->
 
 </project>
