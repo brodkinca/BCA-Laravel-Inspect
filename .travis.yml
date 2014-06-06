@@ -1,11 +1,10 @@
 language: php
 php:
+  - 5.4
   - 5.5
+  - 5.6
+  - hhvm
 before_script:
   - composer install --prefer-source --no-interaction
-  - pear channel-discover pear.phing.info
-  - pear install --alldeps phing/phing
-  - pear install PHP_CodeSniffer
-  - phpenv rehash
 script:
-  - phing
+  - php phing.phar default-ci
