@@ -23,28 +23,8 @@ The tools currently provided are:
 ### 1. Add the package to Composer
 This package should be installed via Composer. You may either edit your project's `composer.json` file to require `bca/laravel-inspect` or via the command line.
 
-#### Option 1: Edit composer.json manually
-
-First, add `bca/laravel-inspect` to the `require` section.
-
-```json
-{ 
-    "require": {
-        "bca/laravel-inspect": "@stable"
-    }
-}
-```
-
-Next, update Composer from the Terminal:
-
 ```sh
-composer update
-```
-
-#### Option 2: Install via the command line
-
-```sh
-composer require bca/laravel-inspect:dev-master
+composer require bca/laravel-inspect:~1.3
 ```
 
 ### 2. Add the service provider
@@ -56,7 +36,7 @@ Once the package has been successfully installed, the final step is to add the s
 
 ### 3. Enjoy!
 
-That's all, folks! Just type `php artisan` from the root directory of your Laravel installation to see your new tools!
+That's all, folks! Just type `./artisan` from the root directory of your Laravel installation to see your new tools!
 
 ## Advanced Usage
 

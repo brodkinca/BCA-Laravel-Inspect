@@ -1,0 +1,3 @@
+* text=auto
+*.php ident
+tests/ export-ignore

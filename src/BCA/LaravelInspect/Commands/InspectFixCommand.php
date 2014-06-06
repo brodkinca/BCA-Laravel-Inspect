@@ -1,18 +1,14 @@
 <?php
-
 /**
  * Inspector Tools for Artisan
  *
- * PHP Version 5.3
- *
- * @category   Command
- * @package    Laravel
- * @subpackage Artisan
- * @author     Brodkin CyberArts <oss@brodkinca.com>
- * @copyright  2013 Brodkin CyberArts.
- * @license    MIT
- * @version    GIT: $Id$
- * @link       https://github.com/brodkinca/BCA-Laravel-Inspect
+ * @category  ServiceProvider
+ * @package   bca/laravel-inspect
+ * @author    Brodkin CyberArts <info@brodkinca.com>
+ * @copyright 2013-2014 Brodkin CyberArts
+ * @license   MIT
+ * @version   GIT: $Id$
+ * @link      https://github.com/brodkinca/BCA-Laravel-Inspect
  */
 
 namespace BCA\LaravelInspect\Commands;
@@ -20,7 +16,7 @@ namespace BCA\LaravelInspect\Commands;
 use Symfony\Component\Console\Input\InputOption;
 
 /**
- * Artisan Inspect:Fix Command
+ * Run php-cs-fixer on Laravel application.
  *
  * @category   Command
  * @package    Laravel
@@ -29,9 +25,10 @@ use Symfony\Component\Console\Input\InputOption;
 class InspectFixCommand extends Inspect
 {
     /**
-     * Name of CLI executable
+     * Name of CLI executable.
      *
      * @var string
+     * @since  1.0.0
      */
     const CLI_TOOL = 'php-cs-fixer';
 
@@ -39,6 +36,7 @@ class InspectFixCommand extends Inspect
      * The console command name.
      *
      * @var string
+     * @since  1.0.0
      */
     protected $name = 'inspect:fix';
 
@@ -46,13 +44,16 @@ class InspectFixCommand extends Inspect
      * The console command description.
      *
      * @var string
+     * @since  1.0.0
      */
     protected $description = 'Run PHP-CS-Fixer.';
 
     /**
      * Run the command. Executed immediately.
      *
-     * @return void
+     * @since  1.0.0
+     *
+     * @return int CLI tool exit code.
      */
     public function fire()
     {
@@ -94,13 +95,17 @@ class InspectFixCommand extends Inspect
             $command.= ' --dry-run';
         }
 
-        passthru($command);
+        passthru($command, $exitCode);
 
         $this->info('Done.');
+
+        return $exitCode;
     }
 
     /**
      * Get the console command options.
+     *
+     * @since  1.0.0
      *
      * @return array
      */

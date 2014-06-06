@@ -1,18 +1,14 @@
 <?php
-
 /**
  * Inspector Tools for Artisan
  *
- * PHP Version 5.3
- *
- * @category   Command
- * @package    Laravel
- * @subpackage Artisan
- * @author     Brodkin CyberArts <oss@brodkinca.com>
- * @copyright  2013 Brodkin CyberArts.
- * @license    MIT
- * @version    GIT: $Id$
- * @link       https://github.com/brodkinca/BCA-Laravel-Inspect
+ * @category  ServiceProvider
+ * @package   bca/laravel-inspect
+ * @author    Brodkin CyberArts <info@brodkinca.com>
+ * @copyright 2013-2014 Brodkin CyberArts
+ * @license   MIT
+ * @version   GIT: $Id$
+ * @link      https://github.com/brodkinca/BCA-Laravel-Inspect
  */
 
 namespace BCA\LaravelInspect\Commands;
@@ -20,38 +16,31 @@ namespace BCA\LaravelInspect\Commands;
 use Symfony\Component\Console\Input\InputOption;
 
 /**
- * Artisan Inspect:Lint Command
- *
- * @category   Command
- * @package    Laravel
- * @subpackage Artisan
+ * Run native PHP linter on Laravel application.
  */
 class InspectLintCommand extends Inspect
 {
     /**
-     * Name of CLI executable
-     *
-     * @since 1.0.1
+     * Name of CLI executable.
      *
      * @var string
+     * @since 1.0.1
      */
     const CLI_TOOL = 'php';
 
     /**
      * The console command name.
      *
-     * @since 1.0.0
-     *
      * @var string
+     * @since 1.0.0
      */
     protected $name = 'inspect:lint';
 
     /**
      * The console command description.
      *
-     * @since 1.0.0
-     *
      * @var string
+     * @since 1.0.0
      */
     protected $description = 'Run PHP\'s built-in linter.';
 
@@ -60,7 +49,7 @@ class InspectLintCommand extends Inspect
      *
      * @since 1.0.0
      *
-     * @return void
+     * @return int CLI tool exit code.
      */
     public function fire()
     {
@@ -80,9 +69,11 @@ class InspectLintCommand extends Inspect
 
         $command = 'find '.$path.' -name \'*.php\' -print0 | xargs -0 -n1 -P10 php -l';
 
-        passthru($command);
+        passthru($command, $exitCode);
 
         $this->info('Done.');
+
+        return $exitCode;
     }
 
     /**
