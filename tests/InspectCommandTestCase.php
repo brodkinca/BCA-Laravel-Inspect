@@ -1,21 +1,36 @@
 <?php
+/**
+ * Inspector Tools for Artisan
+ *
+ * @category  ServiceProvider
+ * @package   bca/laravel-inspect
+ * @author    Brodkin CyberArts <info@brodkinca.com>
+ * @copyright 2013-2014 Brodkin CyberArts
+ * @license   MIT
+ * @version   GIT: $Id$
+ * @link      https://github.com/brodkinca/BCA-Laravel-Inspect
+ */
 
 namespace BCA\LaravelInspect\Tests;
 
 use \ReflectionClass as RC;
 
+/**
+ * Abstract tests for inspect command classes.
+ */
 abstract class InspectCommandTestCase extends InspectTestCase
 {
+
     /**
      * Fully namespaced identifier for class to be tested.
      *
+     * @var string
      * @since 1.0.1
-     * @var   string
      */
     protected $testClass = '';
 
     /**
-     * Test that command has Command as a parent
+     * Test that command has Command as a parent.
      *
      * @since 1.0.1
      *
@@ -31,7 +46,7 @@ abstract class InspectCommandTestCase extends InspectTestCase
     }
 
     /**
-     * Test that rulesets are installed successfully
+     * Test that rulesets are installed successfully.
      *
      * @since 1.0.2
      *
@@ -39,20 +54,19 @@ abstract class InspectCommandTestCase extends InspectTestCase
      */
     public function testInstallRuleset()
     {
-        // Instantiate class
+        // Instantiate class.
         $class = new $this->testClass();
 
-        // Get ruleset paths
+        // Get ruleset paths.
         $pathRulesetLocal = $this->getProperty('pathRulesetLocal')->getValue($class);
         $pathRulesetStock = $this->getProperty('pathRulesetStock')->getValue($class);
 
         // If this command uses a ruleset...
         if ($pathRulesetStock !== null) {
-
-            // Reflect protected mathod
+            // Reflect protected mathod.
             $method = $this->getMethod('installRuleset');
 
-            // Remove local ruleset, if exists
+            // Remove local ruleset, if exists.
             @unlink($pathRulesetLocal);
 
             $this->assertThat($pathRulesetStock, $this->fileExists());
@@ -67,13 +81,13 @@ abstract class InspectCommandTestCase extends InspectTestCase
             $this->assertThat($pathRulesetLocal, $this->fileExists());
             $this->assertXmlFileEqualsXmlFile($pathRulesetLocal, $pathRulesetStock);
 
-            // Remove local ruleset
+            // Remove local ruleset.
             @unlink($pathRulesetLocal);
         }
     }
 
     /**
-     * Test that directory paths are set and valid
+     * Test that directory paths are set and valid.
      *
      * @since 1.0.1
      *
@@ -97,7 +111,7 @@ abstract class InspectCommandTestCase extends InspectTestCase
     }
 
     /**
-     * Test getOptions return values
+     * Test getOptions return values.
      *
      * Asserts that all values are acceptable types.
      *

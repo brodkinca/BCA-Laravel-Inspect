@@ -1,18 +1,14 @@
 <?php
-
 /**
  * Inspector Tools for Artisan
  *
- * PHP Version 5.3
- *
- * @category   Command
- * @package    Laravel
- * @subpackage Artisan
- * @author     Brodkin CyberArts <oss@brodkinca.com>
- * @copyright  2013 Brodkin CyberArts.
- * @license    MIT
- * @version    GIT: $Id$
- * @link       https://github.com/brodkinca/BCA-Laravel-Inspect
+ * @category  ServiceProvider
+ * @package   bca/laravel-inspect
+ * @author    Brodkin CyberArts <info@brodkinca.com>
+ * @copyright 2013-2014 Brodkin CyberArts
+ * @license   MIT
+ * @version   GIT: $Id$
+ * @link      https://github.com/brodkinca/BCA-Laravel-Inspect
  */
 
 namespace BCA\LaravelInspect\Commands;
@@ -20,7 +16,7 @@ namespace BCA\LaravelInspect\Commands;
 use Symfony\Component\Console\Input\InputOption;
 
 /**
- * Artisan Inspect:Fix Command
+ * Run php-cs-fixer on Laravel application.
  *
  * @category   Command
  * @package    Laravel
@@ -29,7 +25,7 @@ use Symfony\Component\Console\Input\InputOption;
 class InspectFixCommand extends Inspect
 {
     /**
-     * Name of CLI executable
+     * Name of CLI executable.
      *
      * @var string
      */

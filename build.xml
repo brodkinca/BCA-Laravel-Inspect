@@ -2,7 +2,7 @@
 
 <project name="laravel-inspect" default="default">
 
-  <import file="/Volumes/Development/PHP/BCA-PHP-Architect/build.default.xml"/>
+  <import file="vendor/bca/architect/build.default.xml"/>
 
   <target name="phpunit"/>
 

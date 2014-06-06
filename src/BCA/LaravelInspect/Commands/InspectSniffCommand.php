@@ -1,18 +1,14 @@
 <?php
-
 /**
  * Inspector Tools for Artisan
  *
- * PHP Version 5.3
- *
- * @category   Command
- * @package    Laravel
- * @subpackage Artisan
- * @author     Brodkin CyberArts <oss@brodkinca.com>
- * @copyright  2013 Brodkin CyberArts.
- * @license    MIT
- * @version    GIT: $Id$
- * @link       https://github.com/brodkinca/BCA-Laravel-Inspect
+ * @category  ServiceProvider
+ * @package   bca/laravel-inspect
+ * @author    Brodkin CyberArts <info@brodkinca.com>
+ * @copyright 2013-2014 Brodkin CyberArts
+ * @license   MIT
+ * @version   GIT: $Id$
+ * @link      https://github.com/brodkinca/BCA-Laravel-Inspect
  */
 
 namespace BCA\LaravelInspect\Commands;
@@ -20,47 +16,39 @@ namespace BCA\LaravelInspect\Commands;
 use Symfony\Component\Console\Input\InputOption;
 
 /**
- * Artisan Inspect:Sniff Command
- *
- * @category   Command
- * @package    Laravel
- * @subpackage Artisan
+ * Run PHP_CodeSniffer on Laravel application.
  */
 class InspectSniffCommand extends Inspect
 {
     /**
-     * Name of CLI executable
-     *
-     * @since 1.0.1
+     * Name of CLI executable.
      *
      * @var string
+     * @since 1.0.1
      */
     const CLI_TOOL = 'phpcs';
 
     /**
      * The console command name.
      *
-     * @since 1.0.0
-     *
      * @var string
+     * @since 1.0.0
      */
     protected $name = 'inspect:sniff';
 
     /**
      * The console command description.
      *
-     * @since 1.0.0
-     *
      * @var string
+     * @since 1.0.0
      */
     protected $description = 'Run PHP Code Sniffer.';
 
     /**
      * The available command options.
      *
-     * @since 1.3.0
-     *
      * @var array
+     * @since 1.3.0
      */
     protected $options = array(
         'report',
@@ -69,7 +57,7 @@ class InspectSniffCommand extends Inspect
     );
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @since 1.0.2
      */
@@ -91,7 +79,7 @@ class InspectSniffCommand extends Inspect
     {
         $options = parent::getOptions();
 
-        // --report
+        // Add --report flag.
         $options[] = array(
             'report',
             null,
@@ -100,7 +88,7 @@ class InspectSniffCommand extends Inspect
 "gitblame", "hgblame" or "notifysend" report (the "full" report is printed by default).',
         );
 
-        // --report-file
+        // Add --report-file flag.
         $options[] = array(
             'report-file',
             null,
@@ -108,7 +96,7 @@ class InspectSniffCommand extends Inspect
             'Write the report to the specified file path.',
         );
 
-        // --tab-width
+        // Add --tab-width flag.
         $options[] = array(
             'tab-width',
             null,
@@ -142,10 +130,11 @@ class InspectSniffCommand extends Inspect
         $commandParts = array(
             $this->pathCli,
             '--standard='.$this->pathRuleset,
-            sprintf('--tab-width=%d', $this->option('tab-width')), // Laravel likes tabs, phpcs doesn't
+            // Laravel likes tabs, phpcs doesn't.
+            sprintf('--tab-width=%d', $this->option('tab-width')),
         );
 
-        $this->appendCommandOptions($commandParts);
+        $commandParts = $this->appendCommandOptions($commandParts);
 
         $commandParts[] = sprintf('%s/%s', base_path(), $this->option('path'));
 
@@ -159,18 +148,18 @@ class InspectSniffCommand extends Inspect
     }
 
     /**
-     * Append Options to CLI Command
+     * Append options to CLI command.
      *
-     * @param Array $commandParts
+     * @param array $commandParts Array of command parts as strings.
      *
      * @since 1.3.0
      *
-     * @return Array
+     * @return array
      */
-    private function appendCommandOptions(Array &$commandParts)
+    private function appendCommandOptions(array $commandParts)
     {
         foreach ($this->options as $optionKey) {
-            // Skip tab-width option because it's appended by default
+            // Skip tab-width option because it's appended by default.
             if ($optionKey == 'tab-width') {
                 continue;
             }
@@ -180,5 +169,7 @@ class InspectSniffCommand extends Inspect
                 $commandParts[] = sprintf('--%s=%s', $optionKey, $optionValue);
             }
         }
+
+        return $commandParts;
     }
 }
