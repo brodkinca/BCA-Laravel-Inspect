@@ -28,6 +28,7 @@ class InspectFixCommand extends Inspect
      * Name of CLI executable.
      *
      * @var string
+     * @since  1.0.0
      */
     const CLI_TOOL = 'php-cs-fixer';
 
@@ -35,6 +36,7 @@ class InspectFixCommand extends Inspect
      * The console command name.
      *
      * @var string
+     * @since  1.0.0
      */
     protected $name = 'inspect:fix';
 
@@ -42,11 +44,14 @@ class InspectFixCommand extends Inspect
      * The console command description.
      *
      * @var string
+     * @since  1.0.0
      */
     protected $description = 'Run PHP-CS-Fixer.';
 
     /**
      * Run the command. Executed immediately.
+     *
+     * @since  1.0.0
      *
      * @return int CLI tool exit code.
      */
@@ -99,6 +104,8 @@ class InspectFixCommand extends Inspect
 
     /**
      * Get the console command options.
+     *
+     * @since  1.0.0
      *
      * @return array
      */
