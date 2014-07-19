@@ -33,7 +33,7 @@
     "autoload": {
         "psr-0": {
             "BCA\\LaravelInspect": "src/",
-            "BCA\\LaravelInspect\\Tests": "tests/",
+            "BCA\\LaravelInspect\\Tests": "tests/"
         }
     },
     "minimum-stability": "dev",
