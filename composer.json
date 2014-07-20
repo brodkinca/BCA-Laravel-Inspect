@@ -27,13 +27,12 @@
         "phpmd/phpmd": "~1.5"
     },
     "require-dev": {
-        "phpunit/phpunit": "~3.7",
         "bca/architect": "~1.1"
     },
     "autoload": {
-        "classmap": ["tests/"],
         "psr-0": {
-            "BCA\\LaravelInspect": "src/"
+            "BCA\\LaravelInspect": "src/",
+            "BCA\\LaravelInspect\\Tests": "tests/"
         }
     },
     "minimum-stability": "dev",
