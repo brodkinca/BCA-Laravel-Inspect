@@ -66,6 +66,14 @@ abstract class Inspect extends Command
     protected $pathRulesetStock;
 
     /**
+     * The available command options.
+     *
+     * @var array
+     * @since 1.4.0
+     */
+    protected $options = array();
+
+    /**
      * Executes the command.
      *
      * @since  1.0.2
@@ -184,5 +192,26 @@ abstract class Inspect extends Command
         } elseif (is_readable($this->pathRulesetLocalLegacy)) {
             $this->pathRuleset = $this->pathRulesetLocalLegacy;
         }
+    }
+
+    /**
+     * Append options to CLI command.
+     *
+     * @param array $commandParts Array of command parts as strings.
+     *
+     * @since 1.4.0
+     *
+     * @return array
+     */
+    protected function appendCommandOptions(array $commandParts)
+    {
+        foreach ($this->options as $optionKey) {
+            $optionValue = $this->option($optionKey);
+            if (!empty($optionValue)) {
+                $commandParts[] = sprintf('--%s=%s', $optionKey, $optionValue);
+            }
+        }
+
+        return $commandParts;
     }
 }

@@ -156,7 +156,7 @@ class InspectSniffCommand extends Inspect
      *
      * @return array
      */
-    private function appendCommandOptions(array $commandParts)
+    protected function appendCommandOptions(array $commandParts)
     {
         foreach ($this->options as $optionKey) {
             // Skip tab-width option because it's appended by default.
