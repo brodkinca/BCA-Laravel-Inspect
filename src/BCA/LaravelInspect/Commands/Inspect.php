@@ -102,6 +102,14 @@ abstract class Inspect extends Command
             'app'
         );
 
+        $options[] = array(
+          'export',
+          'e',
+          InputOption::VALUE_OPTIONAL,
+          'Export report to txt file.',
+          'phpmd-analysis.txt'
+        );
+
         // Offer to install the ruleset locally if available.
         $this->setPaths();
         if ($this->pathRulesetStock !== null) {
