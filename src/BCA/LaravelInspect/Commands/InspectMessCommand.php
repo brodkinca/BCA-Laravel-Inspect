@@ -76,8 +76,11 @@ class InspectMessCommand extends Inspect
         $command = $this->pathCli.' ';
         $command.= base_path().'/'.$this->option('path').' ';
         $command.= 'text ';
+        if($this->option('export')){
+          $command.= '--reportfile ' . $this->option('export') . ' ';
+        }
         $command.= $this->pathRuleset;
-
+        $this->info($command);
         passthru($command, $exitCode);
 
         $this->info('Done.');
